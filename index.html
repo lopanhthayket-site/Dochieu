@@ -1,180 +1,2179 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="overflow-x-hidden">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luyện Đọc hiểu đoạn văn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Luyện Đọc Song Ngữ Tiếng Anh 9 Global Success - Lớp Anh Thầy Kết</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+  :root {
+    --farm-green: #52b788;
+    --farm-dark-green: #2d6a4f;
+    --farm-yellow: #ffb703;
+    --farm-orange: #fb8500;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   body {
-    font-family: Arial, sans-serif;
-    background-color: #fff8f0;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    background-color: #f4f9f4;
+    background-image: radial-gradient(#d8f3dc 2px, transparent 2px);
+    background-size: 24px 24px;
+    color: #2b2d42;
   }
 
-  header {
-    background-color: #ffd6ba;
-    color: #7a4e3e;
-    padding: 30px 20px 45px;
-    font-size: 32px;
-    font-weight: bold;
-    position: relative;
+  h1, h2, h3, .font-farm {
+    font-family: 'Fredoka', cursive;
   }
 
-  /* Icon Home */
-  .home-link {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 28px;
-    color: #7a4e3e;
-    text-decoration: none;
-    transition: transform 0.2s, color 0.2s;
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .animate-sun {
+    animation: spin-slow 20s linear infinite;
   }
 
-  .home-link:hover {
-    color: #ffb3ba;
-    transform: scale(1.15);
+  .hover-bounce:hover {
+    transform: translateY(-4px);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .toc-container {
-    margin: 40px auto;
-    max-width: 1100px;
-    padding: 20px;
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #e9f5ec;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #74c69d;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #52b788;
   }
 
-  .toc-title {
-    font-size: 28px;
-    color: #7a4e3e;
-    margin-bottom: 20px;
-    font-weight: bold;
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
   }
 
-  .toc-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
+  /* Style bản dịch in nghiêng */
+  .trans-text {
+    font-style: italic;
+    color: #047857; /* Emerald-700 */
+    background-color: #ecfdf5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 2px;
+    display: inline;
+    word-break: break-word;
   }
 
-  .toc-item {
-    background-color: #a0e7e5;
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 20px;
-    color: #3a3a3a;
-    cursor: pointer;
-    transition: transform 0.25s, background-color 0.25s;
-    text-decoration: none;
-    display: block;
+  /* Ẩn bản dịch khi chế độ off */
+  .hide-translation .trans-text {
+    display: none !important;
   }
 
-  .toc-item:hover {
-    background-color: #ffb3ba;
-    transform: translateY(-3px);
+  mark {
+    background-color: #fef08a;
+    color: #713f12;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 700;
   }
 
-  footer {
-    margin-top: 50px;
-    padding: 20px;
-    font-size: 16px;
-    color: #555;
-    background-color: #fff0e1;
+  /* Style cho từ vựng đã thuộc */
+  .vocab-learned {
+    opacity: 0.55;
+    background-color: #f3f4f6 !important;
+    border-color: #d1d5db !important;
   }
-
-  @media (max-width: 900px) {
-    .toc-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (max-width: 600px) {
-    .toc-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .toc-item {
-      font-size: 18px;
-    }
+  .vocab-learned .vocab-text {
+    text-decoration: line-through;
   }
 </style>
 </head>
-<body>
 
-<header>
-  <a href="https://lopanhthayket-site.github.io/lopanhthayket_thcs/" class="home-link" title="Về trang chủ">
-    <i class="fas fa-home"></i>
-  </a>
-  Luyện Dạng: Đọc hiểu đoạn văn
-</header>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden w-full">
 
-<div class="toc-container">
-  <div class="toc-title">Danh sách bộ đề</div>
-  <div class="toc-grid">
+  <!-- TOP HEADER -->
+  <header class="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 text-white shadow-lg relative overflow-hidden w-full">
+    <div class="absolute -right-6 -bottom-6 opacity-20 pointer-events-none">
+      <i class="fa-solid fa-book-open text-7xl md:text-9xl"></i>
+    </div>
+    <div class="absolute left-2 top-2 opacity-15 pointer-events-none">
+      <i class="fa-solid fa-cloud text-4xl md:text-6xl"></i>
+    </div>
 
-    <!-- Đổi link theo ý bạn -->
-    <!-- 40 đề mẫu -->
-    <!-- Bạn copy thêm nếu nhiều hơn -->
-    <!-- Block 01-40 -->
-    <!-- Just paste more -->
-    <!-- Start -->
-    <a href="#" class="toc-item">Đề 01</a>
-    <a href="#" class="toc-item">Đề 02</a>
-    <a href="#" class="toc-item">Đề 03</a>
-    <a href="#" class="toc-item">Đề 04</a>
-    <a href="#" class="toc-item">Đề 05</a>
+    <div class="max-w-6xl mx-auto px-3 py-3 md:py-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 relative z-10">
+      <a href="" target="_blank" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition border border-white/20 text-xs md:text-base">
+        <i class="fa-solid fa-graduation-cap text-yellow-300 text-lg md:text-2xl"></i>
+        <span class="font-bold tracking-wide font-farm">Lớp Anh Thầy Kết</span>
+      </a>
 
-    <a href="#" class="toc-item">Đề 06</a>
-    <a href="#" class="toc-item">Đề 07</a>
-    <a href="#" class="toc-item">Đề 08</a>
-    <a href="#" class="toc-item">Đề 09</a>
-    <a href="#" class="toc-item">Đề 10</a>
+      <div class="text-center px-2">
+        <h1 class="text-xl md:text-3xl font-bold tracking-wider text-yellow-300 drop-shadow">
+          📖 BÀI ĐỌC SONG NGỮ TIẾNG ANH 9 GLOBAL SUCCESS 🎯
+        </h1>
+        <p class="text-[11px] md:text-sm text-green-100 opacity-90">Ôn Thi Vào Lớp 10 - Mở Rộng Từ Vựng & Bứt Phá Điểm Số</p>
+      </div>
 
-    <a href="#" class="toc-item">Đề 11</a>
-    <a href="#" class="toc-item">Đề 12</a>
-    <a href="#" class="toc-item">Đề 13</a>
-    <a href="#" class="toc-item">Đề 14</a>
-    <a href="#" class="toc-item">Đề 15</a>
+      <div class="hidden md:flex items-center gap-2 text-yellow-300">
+        <i class="fa-solid fa-sun text-3xl animate-sun"></i>
+      </div>
+    </div>
+  </header>
 
-    <a href="#" class="toc-item">Đề 16</a>
-    <a href="#" class="toc-item">Đề 17</a>
-    <a href="#" class="toc-item">Đề 18</a>
-    <a href="#" class="toc-item">Đề 19</a>
-    <a href="#" class="toc-item">Đề 20</a>
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-5xl mx-auto px-3 md:px-4 py-4 md:py-6 flex-1 w-full space-y-6 md:space-y-8 overflow-x-hidden">
 
-    <a href="#" class="toc-item">Đề 21</a>
-    <a href="#" class="toc-item">Đề 22</a>
-    <a href="#" class="toc-item">Đề 23</a>
-    <a href="#" class="toc-item">Đề 24</a>
-    <a href="#" class="toc-item">Đề 25</a>
+    <!-- TOPIC SELECTOR & CONTROLS BAR -->
+    <section class="bg-white rounded-2xl p-3 md:p-6 shadow-md border-2 border-green-200 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 w-full">
+      <div class="flex items-center gap-2.5 w-full md:w-auto">
+        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-emerald-600 text-lg md:text-xl shadow-sm">
+          <i class="fa-solid fa-folder-open"></i>
+        </div>
+        <div>
+          <label for="topicSelect" class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wider">Chọn Unit Bài Đọc</label>
+          <span class="text-xs md:text-sm text-green-700 font-semibold leading-tight block">Mỗi Unit chứa 3 bài đọc hiểu nâng cao</span>
+        </div>
+      </div>
 
-    <a href="#" class="toc-item">Đề 26</a>
-    <a href="#" class="toc-item">Đề 27</a>
-    <a href="#" class="toc-item">Đề 28</a>
-    <a href="#" class="toc-item">Đề 29</a>
-    <a href="#" class="toc-item">Đề 30</a>
+      <div class="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto">
+        <!-- Toggle Translation Button -->
+        <button id="toggleTransBtn" onclick="toggleTranslation()" class="w-full sm:w-auto px-3.5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-xs md:text-sm shrink-0">
+          <i class="fa-solid fa-eye-slash"></i> <span id="toggleTransText">Ẩn Bản Dịch</span>
+        </button>
 
-    <a href="#" class="toc-item">Đề 31</a>
-    <a href="#" class="toc-item">Đề 32</a>
-    <a href="#" class="toc-item">Đề 33</a>
-    <a href="#" class="toc-item">Đề 34</a>
-    <a href="#" class="toc-item">Đề 35</a>
+        <div class="w-full sm:w-80">
+          <select id="topicSelect" onchange="changeTopic(this.value)" class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl border-2 border-green-300 bg-emerald-50 text-green-900 font-bold focus:outline-none focus:ring-2 focus:ring-green-500 transition cursor-pointer shadow-inner text-xs md:text-sm">
+            <!-- Options populated dynamically -->
+          </select>
+        </div>
+      </div>
+    </section>
 
-    <a href="#" class="toc-item">Đề 36</a>
-    <a href="#" class="toc-item">Đề 37</a>
-    <a href="#" class="toc-item">Đề 38</a>
-    <a href="#" class="toc-item">Đề 39</a>
-    <a href="#" class="toc-item">Đề 40</a>
+    <!-- SECTION 1: READING PASSAGES WITH VOCAB -->
+    <section id="readingSection" class="space-y-4 md:space-y-6 w-full">
+      <div class="flex items-center justify-between border-b-2 border-green-200 pb-2.5">
+        <h2 class="text-lg md:text-2xl font-bold text-green-800 flex items-center gap-2 font-farm">
+          <i class="fa-solid fa-book-bookmark text-green-600"></i>
+          Bài Đọc Hiểu Song Ngữ Lớp 9
+        </h2>
+        <span id="articleCountBadge" class="bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full border border-green-300 shrink-0">
+          0 Bài Đọc
+        </span>
+      </div>
 
+      <!-- Container for reading articles -->
+      <div id="articlesContainer" class="space-y-4 md:space-y-6 w-full">
+        <!-- Articles injected by JS -->
+      </div>
+    </section>
 
-    <!-- End -->
+    <!-- SECTION 2: FLASHCARD REVISION -->
+    <section class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-md border-2 border-amber-200 space-y-4 md:space-y-6 relative overflow-hidden w-full">
+      <div class="absolute -right-4 -top-4 opacity-10 text-amber-800 pointer-events-none">
+        <i class="fa-solid fa-brain text-7xl md:text-9xl"></i>
+      </div>
 
-  </div>
-</div>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-amber-200 pb-3">
+        <div>
+          <h2 class="text-lg md:text-2xl font-bold text-amber-900 flex items-center gap-2 font-farm">
+            <i class="fa-solid fa-layer-group text-amber-600"></i>
+            Ôn Tập Flashcard Từ Vựng
+          </h2>
+          <p class="text-[11px] md:text-sm text-amber-700">Tổng hợp từ vựng nâng cao từ các bài đọc trong Unit</p>
+        </div>
 
-<footer>
-  © 2026 Lớp Anh thầy Kết. All rights reserved.
-</footer>
+        <!-- Mode Selector Switcher -->
+        <div class="bg-white p-1 rounded-xl border border-amber-300 flex items-center shadow-sm shrink-0">
+          <button id="modeEnVnBtn" onclick="setFlashcardMode('EN-VN')" class="px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition bg-amber-500 text-white shadow-sm">
+            Anh - Việt
+          </button>
+          <button id="modeVnEnBtn" onclick="setFlashcardMode('VN-EN')" class="px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition text-gray-600 hover:bg-amber-100">
+            Việt - Anh
+          </button>
+        </div>
+      </div>
+
+      <!-- Flashcard Display Box -->
+      <div class="flex flex-col items-center justify-center space-y-4 py-2 md:py-4 w-full">
+        
+        <!-- Congratulation Box -->
+        <div id="fcCongratsBox" class="hidden w-full max-w-sm md:max-w-md p-6 md:p-8 bg-white border-2 border-emerald-400 rounded-2xl md:rounded-3xl shadow-xl text-center space-y-3 md:space-y-4">
+          <div class="w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto shadow-inner">
+            🏆
+          </div>
+          <h3 class="text-xl md:text-2xl font-bold text-emerald-800 font-farm">🎉 Chúc mừng, bạn đã học xong từ vựng!</h3>
+          <p class="text-xs text-gray-600">Bạn đã ghi nhớ toàn bộ từ vựng nâng cao trong Unit này.</p>
+          <button onclick="resetFlashcards()" class="px-5 py-2 md:px-6 md:py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition hover-bounce text-xs md:text-sm">
+            <i class="fa-solid fa-rotate-right mr-1"></i> Học Lại Từ Đầu
+          </button>
+        </div>
+
+        <!-- Flashcard Flip Container -->
+        <div id="flashcard" onclick="flipFlashcard()" class="w-full max-w-[90vw] sm:max-w-md h-52 sm:h-56 perspective-1000 cursor-pointer">
+          <div id="flashcardInner" class="relative w-full h-full duration-500 transform-style-3d shadow-lg rounded-2xl border-2 border-amber-300 bg-white">
+            <!-- Front Face -->
+            <div class="absolute w-full h-full backface-hidden flex flex-col items-center justify-center p-4 md:p-6 text-center bg-white rounded-2xl overflow-hidden">
+              <span class="text-[10px] md:text-xs font-bold text-amber-500 uppercase tracking-widest mb-1 md:mb-2" id="fcFrontLabel">Mặt Trước</span>
+              <div id="fcFrontText" class="text-xl md:text-3xl font-bold text-gray-800 mb-1 break-words w-full px-2">Đang tải...</div>
+              <p class="text-[10px] md:text-xs text-gray-400 mt-2 md:mt-4"><i class="fa-solid fa-rotate text-amber-400 mr-1"></i> Nhấp vào thẻ để lật</p>
+            </div>
+
+            <!-- Back Face -->
+            <div class="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center p-4 md:p-6 text-center bg-amber-500 text-white rounded-2xl overflow-hidden">
+              <span class="text-[10px] md:text-xs font-bold text-amber-100 uppercase tracking-widest mb-1 md:mb-2" id="fcBackLabel">Đáp Án</span>
+              <div id="fcBackText" class="text-xl md:text-3xl font-bold mb-1 break-words w-full px-2">...</div>
+              <button onclick="event.stopPropagation(); speakText(document.getElementById('fcAudioText').value)" class="mt-2 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-[11px] md:text-xs flex items-center gap-1">
+                <i class="fa-solid fa-volume-high"></i> Nghe phát âm
+              </button>
+              <input type="hidden" id="fcAudioText" value="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Flashcard Action Buttons -->
+        <div id="fcControls" class="flex flex-wrap items-center justify-center gap-2 md:gap-3 pt-2 w-full">
+          <button onclick="knowWord()" class="flex-1 sm:flex-none px-3.5 py-2 md:px-5 md:py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-1.5 text-xs md:text-sm">
+            <i class="fa-solid fa-circle-check"></i> Đã biết
+          </button>
+          <button onclick="dontKnowWord()" class="flex-1 sm:flex-none px-3.5 py-2 md:px-5 md:py-2.5 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-1.5 text-xs md:text-sm">
+            <i class="fa-solid fa-circle-xmark"></i> Chưa biết
+          </button>
+          <button onclick="nextFlashcard()" class="w-full sm:w-auto px-3.5 py-2 md:px-5 md:py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-1.5 text-xs md:text-sm">
+            <i class="fa-solid fa-forward"></i> Tiếp theo
+          </button>
+        </div>
+
+        <div class="text-[11px] md:text-xs text-amber-800 font-semibold" id="fcProgress">
+          Tiến độ: 0 / 0 từ
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TRANSLATION REFLECTION PRACTICE -->
+    <section class="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-md border-2 border-teal-200 space-y-4 md:space-y-6 relative overflow-hidden w-full">
+      <div class="border-b border-teal-200 pb-3">
+        <h2 class="text-lg md:text-2xl font-bold text-teal-900 flex items-center gap-2 font-farm">
+          <i class="fa-solid fa-bolt text-teal-600"></i>
+          Luyện Phản Xạ Dịch Câu
+        </h2>
+        <p class="text-[11px] md:text-sm text-teal-700">Trích xuất ngẫu nhiên câu trong bài đọc để luyện phản xạ dịch sang tiếng Anh</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-teal-100 flex flex-col items-center text-center space-y-3 md:space-y-4 w-full">
+        <div class="w-full">
+          <span class="text-[10px] md:text-xs font-bold text-teal-500 uppercase tracking-widest">Câu Bản Dịch Tiếng Việt</span>
+          <div id="vietSentence" class="text-base md:text-xl font-bold text-gray-800 mt-1 md:mt-2 min-h-[48px] flex items-center justify-center leading-snug">
+            Bấm "Câu Tiếp Theo" để lấy câu phản xạ...
+          </div>
+        </div>
+
+        <!-- Answer display box -->
+        <div id="engAnswerContainer" class="w-full bg-teal-50 border border-teal-200 rounded-xl p-3 md:p-4 hidden break-words">
+          <span class="text-[10px] md:text-xs font-bold text-teal-700 uppercase tracking-widest block mb-1">Câu Tiếng Anh Gốc Trong Bài:</span>
+          <div id="engAnswer" class="text-sm md:text-lg font-bold text-teal-900 leading-snug"></div>
+          <button onclick="speakText(document.getElementById('engAnswer').innerText)" class="mt-2 text-xs text-teal-700 hover:text-teal-900 font-semibold inline-flex items-center gap-1">
+            <i class="fa-solid fa-volume-high"></i> Nghe phát âm
+          </button>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1 w-full">
+          <button onclick="showSpeakingAnswer()" class="flex-1 sm:flex-none px-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow transition text-xs md:text-sm flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-eye"></i> Hiện Đáp Án
+          </button>
+          <button onclick="nextSpeakingSentence()" class="flex-1 sm:flex-none px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow transition text-xs md:text-sm flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-arrow-right"></i> Câu Tiếp Theo
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-emerald-800 text-white text-center py-4 md:py-6 mt-8 md:mt-12 border-t-4 border-yellow-400 w-full">
+    <div class="max-w-4xl mx-auto px-3 space-y-1 md:space-y-2">
+      <p class="font-farm text-base md:text-lg text-yellow-300">🎓 Lớp Anh Thầy Kết - Luyện Thi Vào Lớp 10 🎯</p>
+      <p class="text-[10px] md:text-xs text-emerald-200">Chương trình Tiếng Anh 9 Global Success - Chinh Phục Kỳ Thi Tuyển Sinh</p>
+    </div>
+  </footer>
+
+<script>
+/*************************************************************
+ * DỮ LIỆU 10 UNIT ANH 9 GLOBAL SUCCESS (MỖI UNIT 3 BÀI ĐỌC)
+ *************************************************************/
+const topicsData = [
+  {
+    id: 1,
+    name: "Unit 1: Local Community",
+    articles: [
+      {
+        id: "1-1",
+        title: "1. Traditional Craft Villages and Cultural Heritage",
+        bilingualSentences: [
+          {
+            en: "Traditional <mark>craft villages</mark> across Viet Nam play a vital role in preserving unique cultural heritage and local <mark>identity</mark>.",
+            vn: "Các làng nghề truyền thống trên khắp Việt Nam đóng vai trò thiết yếu trong việc bảo tồn di sản văn hóa độc đáo và bản sắc địa phương."
+          },
+          {
+            en: "Skilled <mark>artisans</mark> pass down delicate techniques of pottery making and silk weaving to younger <mark>generations</mark>.",
+            vn: "Các nghệ nhân lành nghề truyền lại những kỹ thuật làm gốm và dệt lụa tinh xảo cho thế hệ trẻ."
+          },
+          {
+            en: "These handicraft products serve not only as functional tools but also as artistic <mark>masterpieces</mark>.",
+            vn: "Những sản phẩm thủ công mỹ nghệ này không chỉ phục vụ như công cụ hữu ích mà còn là các kiệt tác nghệ thuật."
+          },
+          {
+            en: "However, modern competition from factory-made goods threatens the financial <mark>sustainability</mark> of many workshops.",
+            vn: "Tuy nhiên, sự cạnh tranh hiện đại từ hàng sản xuất hàng loạt bằng nhà máy đe dọa sự bền vững tài chính của nhiều xưởng sản xuất."
+          },
+          {
+            en: "Promoting community-based tourism helps artisans showcase their skills and earn sustainable <mark>income</mark>.",
+            vn: "Thúc đẩy du lịch dựa vào cộng đồng giúp các nghệ nhân phô diễn kỹ năng và kiếm thu nhập bền vững."
+          },
+          {
+            en: "Protecting local craft traditions ensures that historical memories remain alive within modern <mark>society</mark>.",
+            vn: "Bảo vệ các truyền thống làng nghề đảm bảo rằng ký ức lịch sử vẫn tiếp tục sống động trong xã hội hiện đại."
+          }
+        ],
+        vocab: [
+          { en: "craft villages", pos: "n.phr", ipa: "/krɑːft ˈvɪl.ɪ.dʒɪz/", vn: "các làng nghề truyền thống" },
+          { en: "identity", pos: "n", ipa: "/aɪˈden.tə.ti/", vn: "bản sắc" },
+          { en: "artisans", pos: "n", ipa: "/ˌɑː.tɪˈzænz/", vn: "các nghệ nhân" },
+          { en: "generations", pos: "n", ipa: "/ˌdʒen.əˈreɪ.ʃənz/", vn: "các thế hệ" },
+          { en: "masterpieces", pos: "n", ipa: "/ˈmɑː.stə.piː.sɪz/", vn: "các kiệt tác" },
+          { en: "sustainability", pos: "n", ipa: "/səˌsteɪ.nəˈbɪl.ə.ti/", vn: "sự bền vững" },
+          { en: "income", pos: "n", ipa: "/ˈɪn.kʌm/", vn: "thu nhập" },
+          { en: "society", pos: "n", ipa: "/səˈsaɪ.ə.ti/", vn: "xã hội" },
+          { en: "handicraft", pos: "n", ipa: "/ˈhæn.dɪ.krɑːft/", vn: "sản phẩm thủ công" },
+          { en: "pottery", pos: "n", ipa: "/ˈpɒt.ər.i/", vn: "nghề gốm" },
+          { en: "weaving", pos: "n", ipa: "/ˈwiː.vɪŋ/", vn: "nghề dệt" },
+          { en: "delicate", pos: "adj", ipa: "/ˈdel.ɪ.kət/", vn: "tinh xảo, tinh tế" },
+          { en: "functional", pos: "adj", ipa: "/ˈfʌŋk.ʃən.əl/", vn: "có tính hữu dụng" },
+          { en: "preserving", pos: "v", ipa: "/prɪˈzɜː.vɪŋ/", vn: "bảo tồn" },
+          { en: "workshops", pos: "n", ipa: "/ˈwɜːk.ʃɒps/", vn: "các xưởng sản xuất" }
+        ]
+      },
+      {
+        id: "1-2",
+        title: "2. Community Service and Local Neighborhoods",
+        bilingualSentences: [
+          {
+            en: "Active community helpers organize regular volunteer activities to improve living conditions in local <mark>neighborhoods</mark>.",
+            vn: "Những người giúp đỡ cộng đồng tích cực tổ chức các hoạt động tình nguyện thường xuyên để cải thiện điều kiện sống trong các khu dân cư."
+          },
+          {
+            en: "Cleaning public parks and planting trees enhances neighborhood hygiene and fosters environmental <mark>awareness</mark>.",
+            vn: "Dọn dẹp công viên công cộng và trồng cây giúp nâng cao vệ sinh khu phố và thúc đẩy nhận thức môi trường."
+          },
+          {
+            en: "Community centers provide free after-school tutoring for children from low-income <mark>families</mark>.",
+            vn: "Các trung tâm cộng đồng cung cấp dịch vụ dạy kèm sau giờ học miễn phí cho trẻ em từ các gia đình thu nhập thấp."
+          },
+          {
+            en: "Local garbage collectors work tirelessly to keep residential streets clean and free of hazardous <mark>waste</mark>.",
+            vn: "Những người thu gom rác tại địa phương làm việc không mệt mỏi để giữ cho phố phường sạch sẻ và không có rác thải độc hại."
+          },
+          {
+            en: "Building strong neighborly bonds creates a safe and supportive social environment for <mark>everyone</mark>.",
+            vn: "Xây dựng tình làng nghĩa xóm mạnh mẽ tạo ra một môi trường xã hội an toàn và giàu tính hỗ trợ cho tất cả mọi người."
+          },
+          {
+            en: "Mutual assistance during times of crisis strengthens overall community resilience and <mark>solidarity</mark>.",
+            vn: "Sự giúp đỡ lẫn nhau trong những thời điểm khủng hoảng làm tăng cường khả năng chống chịu và sự đoàn kết chung của cộng đồng."
+          }
+        ],
+        vocab: [
+          { en: "neighborhoods", pos: "n", ipa: "/ˈneɪ.bə.hʊdz/", vn: "các khu dân cư, xóm giềng" },
+          { en: "awareness", pos: "n", ipa: "/əˈweə.nəs/", vn: "nhận thức" },
+          { en: "families", pos: "n", ipa: "/ˈfæm.əl.iz/", vn: "các gia đình" },
+          { en: "waste", pos: "n", ipa: "/weɪst/", vn: "rác thải" },
+          { en: "everyone", pos: "pro", ipa: "/ˈev.ri.wʌn/", vn: "mọi người" },
+          { en: "solidarity", pos: "n", ipa: "/ˌsɒl.ɪˈdær.ə.ti/", vn: "sự đoàn kết" },
+          { en: "helpers", pos: "n", ipa: "/ˈhel.pəz/", vn: "người trợ giúp" },
+          { en: "hygiene", pos: "n", ipa: "/ˈhaɪ.dʒiːn/", vn: "vệ sinh" },
+          { en: "tutoring", pos: "n", ipa: "/ˈtʃuː.tər.ɪŋ/", vn: "việc dạy kèm" },
+          { en: "hazardous", pos: "adj", ipa: "/ˈhæz.ə.dəs/", vn: "độc hại, nguy hiểm" },
+          { en: "resilience", pos: "n", ipa: "/rɪˈzɪl.i.əns/", vn: "khả năng phục hồi, chống chịu" },
+          { en: "neighborly", pos: "adj", ipa: "/ˈneɪ.bə.li/", vn: "thuộc về xóm giềng" },
+          { en: "residential", pos: "adj", ipa: "/ˌrez.ɪˈden.ʃəl/", vn: "thuộc khu dân cư" },
+          { en: "assistance", pos: "n", ipa: "/əˈsɪs.təns/", vn: "sự giúp đỡ" },
+          { en: "fosters", pos: "v", ipa: "/ˈfɒs.təz/", vn: "thúc đẩy, nuôi dưỡng" }
+        ]
+      },
+      {
+        id: "1-3",
+        title: "3. Preserving Public Amenities in Cities",
+        bilingualSentences: [
+          {
+            en: "Well-maintained public amenities, such as libraries and sports facilities, enrich the daily lives of urban <mark>citizens</mark>.",
+            vn: "Các tiện ích công cộng được bảo trì tốt, chẳng hạn như thư viện và cơ sở thể thao, làm giàu cuộc sống hàng ngày của người dân đô thị."
+          },
+          {
+            en: "Public transport systems reduce traffic congestion and minimize air pollution in crowded city <mark>centers</mark>.",
+            vn: "Hệ thống giao thông công cộng làm giảm ùn tắc giao thông và giảm thiểu ô nhiễm không khí ở các trung tâm thành phố đông đúc."
+          },
+          {
+            en: "Community parks offer green spaces for elderly residents to exercise and socialize in fresh <mark>air</mark>.",
+            vn: "Công viên cộng đồng cung cấp không gian xanh cho cư dân cao tuổi tập thể dục và giao lưu trong không khí trong lành."
+          },
+          {
+            en: "Local authorities must allocate adequate budgets for the regular maintenance of public <mark>infrastructure</mark>.",
+            vn: "Chính quyền địa phương phải phân bổ ngân sách đầy đủ cho việc bảo trì thường xuyên cơ sở hạ tầng công cộng."
+          },
+          {
+            en: "Vandalism and littering in public areas damage civic property and incur unnecessary repair <mark>expenses</mark>.",
+            vn: "Hành vi phá hoại và xả rác nơi công cộng làm hỏng tài sản công và gây ra chi phí sửa chữa không cần thiết."
+          },
+          {
+            en: "Encouraging public responsibility ensures that city facilities remain functional and accessible for <mark>everyone</mark>.",
+            vn: "Khuyến khích trách nhiệm công cộng đảm bảo các cơ sở thành phố luôn hoạt động tốt và dễ tiếp cận cho tất cả mọi người."
+          }
+        ],
+        vocab: [
+          { en: "citizens", pos: "n", ipa: "/ˈsɪt.ɪ.zənz/", vn: "các công dân" },
+          { en: "centers", pos: "n", ipa: "/ˈsen.təz/", vn: "các trung tâm" },
+          { en: "air", pos: "n", ipa: "/eər/", vn: "không khí" },
+          { en: "infrastructure", pos: "n", ipa: "/ˈɪn.frəˌstrʌk.tʃər/", vn: "cơ sở hạ tầng" },
+          { en: "expenses", pos: "n", ipa: "/ɪkˈspen.sɪz/", vn: "chi phí" },
+          { en: "everyone", pos: "pro", ipa: "/ˈev.ri.wʌn/", vn: "mọi người" },
+          { en: "amenities", pos: "n", ipa: "/əˈmiː.nə.tiz/", vn: "các tiện ích công cộng" },
+          { en: "congestion", pos: "n", ipa: "/kənˈdʒes.tʃən/", vn: "sự ùn tắc" },
+          { en: "allocate", pos: "v", ipa: "/ˈæl.ə.keɪt/", vn: "phân bổ" },
+          { en: "vandalism", pos: "n", ipa: "/ˈvæn.dəl.ɪz.əm/", vn: "hành vi phá hoại tài sản công" },
+          { en: "functional", pos: "adj", ipa: "/ˈfʌŋk.ʃən.əl/", vn: "hoạt động tốt" },
+          { en: "accessible", pos: "adj", ipa: "/əkˈses.ə.bəl/", vn: "dễ tiếp cận" },
+          { en: "maintenance", pos: "n", ipa: "/ˈmeɪn.tən.əns/", vn: "sự bảo trì" },
+          { en: "civic", pos: "adj", ipa: "/ˈsɪv.ɪk/", vn: "thuộc công dân / công cộng" },
+          { en: "enrich", pos: "v", ipa: "/ɪnˈrɪtʃ/", vn: "làm giàu, phong phú" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: "Unit 2: City Life",
+    articles: [
+      {
+        id: "2-1",
+        title: "1. The Bustle of Urban Life",
+        bilingualSentences: [
+          {
+            en: "Living in a booming metropolis offers vast employment opportunities and modern educational <mark>facilities</mark>.",
+            vn: "Sống ở một siêu đô thị bùng nổ mang lại cơ hội việc làm rộng mở và các cơ sở giáo dục hiện đại."
+          },
+          {
+            en: "However, constant traffic jams during rush hours create immense stress for daily <mark>commuters</mark>.",
+            vn: "Tuy nhiên, ùn tắc giao thông liên tục trong giờ cao điểm tạo ra áp lực vô cùng lớn cho những người đi làm hàng ngày."
+          },
+          {
+            en: "High noise levels and air pollution are common drawbacks of living in densely populated <mark>districts</mark>.",
+            vn: "Mức độ tiếng ồn cao và ô nhiễm không khí là những nhược điểm phổ biến khi sống ở các quận đông dân cư."
+          },
+          {
+            en: "Many young adults are drawn to the vibrant nightlife and diverse entertainment choices available in big <mark>cities</mark>.",
+            vn: "Nhiều người trẻ bị thu hút bởi cuộc sống về đêm sôi động và các lựa chọn giải trí đa dạng có sẵn ở các thành phố lớn."
+          },
+          {
+            en: "City authorities are expanding underground metro networks to alleviate surface traffic <mark>congestion</mark>.",
+            vn: "Chính quyền thành phố đang mở rộng mạng lưới tàu điện ngầm để giảm bớt ùn tắc giao thông trên mặt đất."
+          },
+          {
+            en: "Balancing urban development with environmental protection is essential to building livable future <mark>cities</mark>.",
+            vn: "Cân bằng giữa phát triển đô thị và bảo vệ môi trường là điều thiết yếu để xây dựng các thành phố tương lai đáng sống."
+          }
+        ],
+        vocab: [
+          { en: "facilities", pos: "n", ipa: "/fəˈsɪl.ə.tiz/", vn: "cơ sở vật chất" },
+          { en: "commuters", pos: "n", ipa: "/kəˈmjuː.təz/", vn: "người đi làm hàng ngày" },
+          { en: "districts", pos: "n", ipa: "/ˈdɪs.trɪkts/", vn: "các quận, huyện" },
+          { en: "cities", pos: "n", ipa: "/ˈsɪt.iz/", vn: "các thành phố" },
+          { en: "congestion", pos: "n", ipa: "/kənˈdʒes.tʃən/", vn: "sự ùn tắc" },
+          { en: "metropolis", pos: "n", ipa: "/məˈtrɒp.əl.ɪs/", vn: "siêu đô thị" },
+          { en: "drawbacks", pos: "n", ipa: "/ˈdrɔː.bæks/", vn: "các nhược điểm" },
+          { en: "densely", pos: "adv", ipa: "/ˈdens.li/", vn: "một cách đông đúc" },
+          { en: "vibrant", pos: "adj", ipa: "/ˈvaɪ.brənt/", vn: "sôi động, đầy sức sống" },
+          { en: "alleviate", pos: "v", ipa: "/əˈliː.vi.eɪt/", vn: "giảm bớt, làm nhẹ" },
+          { en: "livable", pos: "adj", ipa: "/ˈlɪv.ə.bəl/", vn: "đáng sống" },
+          { en: "nightlife", pos: "n", ipa: "/ˈnaɪt.laɪf/", vn: "cuộc sống về đêm" },
+          { en: "underground", pos: "adj / n", ipa: "/ˌʌn.dəˈɡraʊnd/", vn: "dưới lòng đất" },
+          { en: "immense", pos: "adj", ipa: "/ɪˈmens/", vn: "bao la, vô cùng lớn" },
+          { en: "rush hours", pos: "n.phr", ipa: "/rʌʃ aʊəz/", vn: "giờ cao điểm" }
+        ]
+      },
+      {
+        id: "2-2",
+        title: "2. Concrete Jungles vs. Green Spaces",
+        bilingualSentences: [
+          {
+            en: "Rapid urbanization turns green natural landscapes into concrete jungles dominated by high-rise <mark>skyscrapers</mark>.",
+            vn: "Đô thị hóa nhanh chóng biến cảnh quan thiên nhiên xanh thành những khu rừng bê tông chiếm ưu thế bởi các tòa nhà cao tầng."
+          },
+          {
+            en: "Lack of open parks reduces opportunities for outdoor physical exercise and social <mark>recreation</mark>.",
+            vn: "Sự thiếu hụt công viên mở làm giảm cơ hội rèn luyện thể chất ngoài trời và giải trí xã hội."
+          },
+          {
+            en: "Urban heat island effects make city centers significantly warmer than surrounding rural <mark>areas</mark>.",
+            vn: "Hiệu ứng đảo nhiệt đô thị làm cho các trung tâm thành phố nóng hơn đáng kể so với các vùng nông thôn xung quanh."
+          },
+          {
+            en: "Architects are now designing rooftop gardens to improve air quality and lower building <mark>temperatures</mark>.",
+            vn: "Các kiến trúc sư hiện đang thiết kế vườn trên mái để cải thiện chất lượng không khí và hạ nhiệt độ tòa nhà."
+          },
+          {
+            en: "Integrating nature into urban architecture enhances resident mental well-being and visual <mark>appeal</mark>.",
+            vn: "Tích hợp thiên nhiên vào kiến trúc đô thị giúp nâng cao sức khỏe tinh thần của cư dân và tính thẩm mỹ thị giác."
+          },
+          {
+            en: "Green cities represent the ideal model for sustainable development in the twenty-first <mark>century</mark>.",
+            vn: "Thành phố xanh đại diện cho mô hình lý tưởng cho sự phát triển bền vững trong thế kỷ hai mươi mốt."
+          }
+        ],
+        vocab: [
+          { en: "skyscrapers", pos: "n", ipa: "/ˈskaɪˌskreɪ.pəz/", vn: "các tòa nhà cao tầng" },
+          { en: "recreation", pos: "n", ipa: "/ˌrek.riˈeɪ.ʃən/", vn: "sự giải trí" },
+          { en: "areas", pos: "n", ipa: "/ˈeə.ri.əz/", vn: "các khu vực" },
+          { en: "temperatures", pos: "n", ipa: "/ˈtem.prə.tʃəz/", vn: "nhiệt độ" },
+          { en: "appeal", pos: "n", ipa: "/əˈpiːl/", vn: "sức hút, vẻ đẹp" },
+          { en: "century", pos: "n", ipa: "/ˈsen.tʃər.i/", vn: "thế kỷ" },
+          { en: "urbanization", pos: "n", ipa: "/ˌɜː.bən.aɪˈzeɪ.ʃən/", vn: "sự đô thị hóa" },
+          { en: "concrete", pos: "n / adj", ipa: "/ˈkɒŋ.kriːt/", vn: "bê tông" },
+          { en: "heat island", pos: "n.phr", ipa: "/hiːt ˈaɪ.lənd/", vn: "đảo nhiệt" },
+          { en: "architects", pos: "n", ipa: "/ˈɑː.kɪ.tekts/", vn: "các kiến trúc sư" },
+          { en: "integrating", pos: "v", ipa: "/ˈɪn.tɪ.ɡreɪ.tɪŋ/", vn: "tích hợp" },
+          { en: "visual", pos: "adj", ipa: "/ˈvɪʒ.u.əl/", vn: "thuộc thị giác" },
+          { en: "dominated", pos: "v", ipa: "/ˈdɒm.ɪ.neɪ.tɪd/", vn: "chiếm ưu thế" },
+          { en: "resident", pos: "n / adj", ipa: "/ˈrez.ɪ.dənt/", vn: "cư dân" },
+          { en: "sustainable", pos: "adj", ipa: "/səˈsteɪ.nə.bəl/", vn: "bền vững" }
+        ]
+      },
+      {
+        id: "2-3",
+        title: "3. Public Transport Solutions in Modern Cities",
+        bilingualSentences: [
+          {
+            en: "Efficient public transit systems are crucial to solving urban gridlock and reducing carbon <mark>footprints</mark>.",
+            vn: "Hệ thống giao thông công cộng hiệu quả là yếu tố quyết định để giải quyết ùn tắc đô thị và giảm dấu chân carbon."
+          },
+          {
+            en: "Electric buses and elevated trains offer clean, affordable transportation options for urban <mark>workers</mark>.",
+            vn: "Xe buýt điện và tàu điện trên cao mang lại các lựa chọn giao thông sạch, giá rẻ cho lao động đô thị."
+          },
+          {
+            en: "Encouraging citizens to switch from private cars to public transit significantly cuts exhaust <mark>emissions</mark>.",
+            vn: "Khuyến khích người dân chuyển từ xe cá nhân sang giao thông công cộng làm cắt giảm đáng kể phát thải khí độc."
+          },
+          {
+            en: "Smart ticketing systems using mobile apps streamline passenger boarding and reduce waiting <mark>times</mark>.",
+            vn: "Hệ thống vé thông minh qua ứng dụng di động giúp tối ưu hóa việc lên xe của hành khách và giảm thời gian chờ đợi."
+          },
+          {
+            en: "Dedicated bus lanes ensure rapid transit speeds even during severe peak traffic <mark>hours</mark>.",
+            vn: "Làn đường dành riêng cho xe buýt đảm bảo tốc độ di chuyển nhanh ngay cả trong những giờ cao điểm nghiêm trọng."
+          },
+          {
+            en: "Modernizing public transport infrastructure makes city travel seamless and eco-friendly for <mark>everyone</mark>.",
+            vn: "Hiện đại hóa cơ sở hạ tầng giao thông công cộng giúp việc di chuyển trong thành phố trở nên liền mạch và thân thiện với môi trường cho mọi người."
+          }
+        ],
+        vocab: [
+          { en: "footprints", pos: "n", ipa: "/ˈfʊt.prɪnts/", vn: "dấu chân (carbon)" },
+          { en: "workers", pos: "n", ipa: "/ˈwɜː.kəz/", vn: "các người lao động" },
+          { en: "emissions", pos: "n", ipa: "/iˈmɪʃ.ənz/", vn: "lượng phát thải" },
+          { en: "times", pos: "n", ipa: "/taɪmz/", vn: "thời gian" },
+          { en: "hours", pos: "n", ipa: "/aʊəz/", vn: "giờ cao điểm" },
+          { en: "everyone", pos: "pro", ipa: "/ˈev.ri.wʌn/", vn: "mọi người" },
+          { en: "gridlock", pos: "n", ipa: "/ˈɡrɪd.lɒk/", vn: "sự ùn tắc giao thông nghiêm trọng" },
+          { en: "elevated", pos: "adj", ipa: "/ˈel.ɪ.veɪ.tɪd/", vn: "trên cao" },
+          { en: "streamline", pos: "v", ipa: "/ˈstriːm.laɪn/", vn: "tối ưu hóa, tinh giảm" },
+          { en: "dedicated", pos: "adj", ipa: "/ˈded.ɪ.keɪ.tɪd/", vn: "dành riêng" },
+          { en: "seamless", pos: "adj", ipa: "/ˈsiːm.ləs/", vn: "liền mạch, suôn sẻ" },
+          { en: "transit", pos: "n", ipa: "/ˈtræn.zɪt/", vn: "giao thông, sự di chuyển" },
+          { en: "ticketing", pos: "n", ipa: "/ˈtɪk.ɪ.tɪŋ/", vn: "việc bán vé" },
+          { en: "affordable", pos: "adj", ipa: "/əˈfɔː.də.bəl/", vn: "giá cả phải chăng" },
+          { en: "modernizing", pos: "v", ipa: "/ˈmɒd.ən.aɪz.ɪŋ/", vn: "hiện đại hóa" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    name: "Unit 3: Healthy Living for Teens",
+    articles: [
+      {
+        id: "3-1",
+        title: "1. Managing Academic Pressure and Mental Health",
+        bilingualSentences: [
+          {
+            en: "Teenagers today face intense academic pressure from exams, which often leads to anxiety and emotional <mark>burnout</mark>.",
+            vn: "Thanh thiếu niên ngày nay phải đối mặt với áp lực học tập gay gắt từ các kỳ thi, điều này thường dẫn đến lo âu và kiệt sức cảm xúc."
+          },
+          {
+            en: "Developing good time management skills helps students organize study tasks without feeling <mark>overwhelmed</mark>.",
+            vn: "Phát triển kỹ năng quản lý thời gian tốt giúp học sinh sắp xếp nhiệm vụ học tập mà không cảm thấy bị quá tải."
+          },
+          {
+            en: "Engaging in physical sports releases endorphins, effectively elevating mood and reducing stress <mark>levels</mark>.",
+            vn: "Tham gia các môn thể thao thể chất giúp giải phóng endorphin, nâng cao tâm trạng và giảm mức độ căng thẳng hiệu quả."
+          },
+          {
+            en: "Schools should establish counseling centers where teenagers can seek professional guidance for personal <mark>problems</mark>.",
+            vn: "Các trường học nên thành lập các trung tâm tư vấn nơi thanh thiếu niên có thể tìm kiếm sự hướng dẫn chuyên nghiệp cho các vấn đề cá nhân."
+          },
+          {
+            en: "Open communication with parents creates a supportive atmosphere where teenagers feel understood and <mark>valued</mark>.",
+            vn: "Giao tiếp cởi mở với cha mẹ tạo ra một bầu không khí hỗ trợ, nơi thanh thiếu niên cảm thấy được hiểu và coi trọng."
+          },
+          {
+            en: "Prioritizing mental health alongside academic achievement ensures balanced personal growth during teenage <mark>years</mark>.",
+            vn: "Ưu tiên sức khỏe tinh thần song song với thành tích học tập đảm bảo sự phát triển cá nhân cân bằng trong những năm tuổi teen."
+          }
+        ],
+        vocab: [
+          { en: "burnout", pos: "n", ipa: "/ˈbɜːn.aʊt/", vn: "sự kiệt sức" },
+          { en: "overwhelmed", pos: "adj", ipa: "/ˌəʊ.vəˈwelmd/", vn: "bị quá tải, ngợp" },
+          { en: "levels", pos: "n", ipa: "/ˈlev.əlz/", vn: "mức độ" },
+          { en: "problems", pos: "n", ipa: "/ˈprɒb.ləmz/", vn: "các vấn đề" },
+          { en: "valued", pos: "adj", ipa: "/ˈvæl.juːd/", vn: "được trân trọng" },
+          { en: "years", pos: "n", ipa: "/jɪəz/", vn: "những năm tháng" },
+          { en: "intense", pos: "adj", ipa: "/ɪnˈtens/", vn: "gay gắt, dữ dội" },
+          { en: "counseling", pos: "n", ipa: "/ˈkaʊn.səl.ɪŋ/", vn: "sự tư vấn tâm lý" },
+          { en: "endorphins", pos: "n", ipa: "/enˈdɔː.fɪnz/", vn: "hoc-mon hạnh phúc" },
+          { en: "prioritizing", pos: "v", ipa: "/praɪˈɒr.ɪ.taɪz.ɪŋ/", vn: "ưu tiên" },
+          { en: "guidance", pos: "n", ipa: "/ˈɡaɪ.dəns/", vn: "sự hướng dẫn" },
+          { en: "atmosphere", pos: "n", ipa: "/ˈæt.məs.fɪər/", vn: "bầu không khí" },
+          { en: "achievement", pos: "n", ipa: "/əˈtʃiːv.mənt/", vn: "thành tích" },
+          { en: "elevating", pos: "v", ipa: "/ˈel.ɪ.veɪt.ɪŋ/", vn: "nâng cao" },
+          { en: "anxiety", pos: "n", ipa: "/æŋˈzaɪ.ə.ti/", vn: "sự lo âu" }
+        ]
+      },
+      {
+        id: "3-2",
+        title: "2. Balanced Nutrition and Physical Fitness",
+        bilingualSentences: [
+          {
+            en: "Consuming fast food and sugary drinks frequently contributes to obesity and nutritional <mark>deficiencies</mark>.",
+            vn: "Việc tiêu thụ thức ăn nhanh và đồ uống có đường thường xuyên góp phần gây nên béo phì và thiếu hụt dinh dưỡng."
+          },
+          {
+            en: "A balanced diet containing fresh vegetables, lean proteins, and whole grains fuels active teenage <mark>bodies</mark>.",
+            vn: "Một chế độ ăn cân bằng chứa rau tươi, đạm nạc và ngũ cốc nguyên hạt sẽ tiếp năng lượng cho cơ thể thanh thiếu niên năng động."
+          },
+          {
+            en: "Regular physical exercise, such as cycling or playing basketball, strengthens muscles and boosts cardiovascular <mark>health</mark>.",
+            vn: "Tập thể dục thường xuyên, như đi xe đạp hoặc chơi bóng rổ, giúp cơ bắp khỏe mạnh và tăng cường sức khỏe tim mạch."
+          },
+          {
+            en: "Getting adequate nightly sleep is vital for brain development, memory consolidation, and physical <mark>recovery</mark>.",
+            vn: "Ngủ đủ giấc hàng đêm là điều tối quan trọng cho sự phát triển của não bộ, củng cố trí nhớ và phục hồi thể chất."
+          },
+          {
+            en: "Avoiding excessive screen time before bed prevents sleep disturbances and improves overall sleep <mark>quality</mark>.",
+            vn: "Tránh thời gian ngồi trước màn hình quá nhiều trước khi đi ngủ giúp ngăn ngừa rối loạn giấc ngủ và cải thiện chất lượng giấc ngủ tổng thể."
+          },
+          {
+            en: "Building healthy lifestyle habits during youth lays a strong foundation for lifelong health and <mark>vitality</mark>.",
+            vn: "Xây dựng thói quen lối sống lành mạnh thời trẻ đặt nền móng vững chắc cho sức khỏe và sinh lực suốt đời."
+          }
+        ],
+        vocab: [
+          { en: "deficiencies", pos: "n", ipa: "/dɪˈfɪʃ.ən.siz/", vn: "sự thiếu hụt" },
+          { en: "bodies", pos: "n", ipa: "/ˈbɒd.iz/", vn: "cơ thể" },
+          { en: "health", pos: "n", ipa: "/helθ/", vn: "sức khỏe" },
+          { en: "recovery", pos: "n", ipa: "/rɪˈkʌv.ər.i/", vn: "sự phục hồi" },
+          { en: "quality", pos: "n", ipa: "/ˈkwɒl.ə.ti/", vn: "chất lượng" },
+          { en: "vitality", pos: "n", ipa: "/vaɪˈtæl.ə.ti/", vn: "sức sống, sinh lực" },
+          { en: "nutritional", pos: "adj", ipa: "/njuːˈtrɪʃ.ən.əl/", vn: "thuộc dinh dưỡng" },
+          { en: "cardiovascular", pos: "adj", ipa: "/ˌkɑː.di.əʊˈvæs.kjə.lər/", vn: "thuộc tim mạch" },
+          { en: "consolidation", pos: "n", ipa: "/kənˌsɒl.ɪˈdeɪ.ʃən/", vn: "sự củng cố" },
+          { en: "disturbances", pos: "n", ipa: "/dɪˈstɜː.bən.sɪz/", vn: "sự rối loạn, làm phiền" },
+          { en: "adequate", pos: "adj", ipa: "/ˈæd.ə.kwət/", vn: "đầy đủ" },
+          { en: "obesity", pos: "n", ipa: "/əʊˈbiː.sə.ti/", vn: "bệnh béo phì" },
+          { en: "foundation", pos: "n", ipa: "/faʊnˈdeɪ.ʃən/", vn: "nền móng, cơ sở" },
+          { en: "consuming", pos: "v", ipa: "/kənˈsjuːm.ɪŋ/", vn: "tiêu thụ" },
+          { en: "proteins", pos: "n", ipa: "/ˈprəʊ.tiːnz/", vn: "chất đạm" }
+        ]
+      },
+      {
+        id: "3-3",
+        title: "3. Overcoming Peer Pressure and Bullying",
+        bilingualSentences: [
+          {
+            en: "Peer pressure can compel teenagers to adopt unhealthy habits, such as smoking or skipping <mark>classes</mark>.",
+            vn: "Áp lực từ bạn bè có thể ép buộc thanh thiếu niên áp dụng các thói quen không lành mạnh, như hút thuốc hoặc trốn học."
+          },
+          {
+            en: "Learning how to assertively say no protects personal boundaries and maintains self-respect in social <mark>groups</mark>.",
+            vn: "Học cách kiên quyết nói không giúp bảo vệ các ranh giới cá nhân và duy trì sự tự trọng trong các nhóm xã hội."
+          },
+          {
+            en: "Cyberbullying on social media platforms inflicts severe psychological distress on vulnerable <mark>teens</mark>.",
+            vn: "Bắt nạt trên mạng trên các nền tảng mạng xã hội gây ra tổn thương tâm lý nghiêm trọng cho thanh thiếu niên dễ bị tổn thương."
+          },
+          {
+            en: "Schools must enforce strict anti-bullying policies to guarantee a safe learning environment for all <mark>students</mark>.",
+            vn: "Các trường học phải thực thi các chính sách chống bắt nạt nghiêm ngặt để đảm bảo môi trường học tập an toàn cho tất cả học sinh."
+          },
+          {
+            en: "Parents and teachers should encourage open discussions about online safety and emotional <mark>well-being</mark>.",
+            vn: "Cha mẹ và giáo viên nên khuyến khích các cuộc thảo luận cởi mở về an toàn trực tuyến và sức khỏe tinh thần."
+          },
+          {
+            en: "Fostering self-confidence enables teenagers to resist negative influences and make wise life <mark>decisions</mark>.",
+            vn: "Nuôi dưỡng sự tự tin giúp thanh thiếu niên cưỡng lại những ảnh hưởng tiêu cực và đưa ra những quyết định cuộc sống khôn ngoan."
+          }
+        ],
+        vocab: [
+          { en: "classes", pos: "n", ipa: "/klɑːsɪz/", vn: "các tiết học" },
+          { en: "groups", pos: "n", ipa: "/ɡruːps/", vn: "các nhóm" },
+          { en: "teens", pos: "n", ipa: "/tiːnz/", vn: "thanh thiếu niên" },
+          { en: "students", pos: "n", ipa: "/ˈstjuː.dənts/", vn: "các học sinh" },
+          { en: "well-being", pos: "n", ipa: "/ˌwelˈbiː.ɪŋ/", vn: "sức khỏe tinh thần" },
+          { en: "decisions", pos: "n", ipa: "/dɪˈsɪʒ.ənz/", vn: "các quyết định" },
+          { en: "compel", pos: "v", ipa: "/kəmˈpel/", vn: "ép buộc" },
+          { en: "assertively", pos: "adv", ipa: "/əˈsɜː.tɪv.li/", vn: "một cách kiên quyết" },
+          { en: "cyberbullying", pos: "n", ipa: "/ˈsaɪ.bəˌbʊl.i.ɪŋ/", vn: "bắt nạt trên mạng" },
+          { en: "distress", pos: "n", ipa: "/dɪˈstres/", vn: "sự đau khổ, tổn thương" },
+          { en: "enforce", pos: "v", ipa: "/ɪnˈfɔːs/", vn: "thực thi" },
+          { en: "boundaries", pos: "n", ipa: "/ˈbaʊn.dər.iz/", vn: "các ranh giới" },
+          { en: "psychological", pos: "adj", ipa: "/ˌsaɪ.kəˈlɒdʒ.ɪ.kəl/", vn: "thuộc tâm lý" },
+          { en: "resist", pos: "v", ipa: "/rɪˈzɪst/", vn: "kháng cự, cưỡng lại" },
+          { en: "influences", pos: "n", ipa: "/ˈɪn.flu.ən.sɪz/", vn: "những ảnh hưởng" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    name: "Unit 4: Remembering the Past",
+    articles: [
+      {
+        id: "4-1",
+        title: "1. Traditional Family Life in Old Viet Nam",
+        bilingualSentences: [
+          {
+            en: "In ancient times, extended families consisting of multiple generations lived harmoniously under the same <mark>roof</mark>.",
+            vn: "Thời xưa, các gia đình nhiều thế hệ bao gồm nhiều lứa tuổi sống hòa thuận dưới một mái nhà."
+          },
+          {
+            en: "Elders commanded immense respect, and their guidance was sought for all major family <mark>decisions</mark>.",
+            vn: "Người lớn tuổi nhận được sự tôn trọng to lớn, và lời khuyên của họ luôn được tìm kiếm cho mọi quyết định lớn trong gia đình."
+          },
+          {
+            en: "Children learned traditional customs and moral values through oral storytelling passed down by <mark>grandparents</mark>.",
+            vn: "Trẻ em học phong tục truyền thống và giá trị đạo đức qua truyền miệng từ ông bà."
+          },
+          {
+            en: "Meals were central family events where members gathered to share daily news and strengthen family <mark>bonds</mark>.",
+            vn: "Bữa ăn là sự kiện trung tâm nơi các thành viên tụ họp chia sẻ tin tức hàng ngày và củng cố tình thân."
+          },
+          {
+            en: "Although life was materialistically simple, deep emotional connections brought immense happiness to rural <mark>households</mark>.",
+            vn: "Dù cuộc sống giản dị về vật chất, kết nối cảm xúc sâu sắc mang lại hạnh phúc to lớn cho các gia đình nông thôn."
+          },
+          {
+            en: "Preserving memories of traditional family life reminds us of core values in our fast-paced modern <mark>world</mark>.",
+            vn: "Gìn giữ ký ức về cuộc sống gia đình truyền thống nhắc nhở chúng ta về những giá trị cốt lõi trong thế giới hối hả hiện đại."
+          }
+        ],
+        vocab: [
+          { en: "roof", pos: "n", ipa: "/ruːf/", vn: "mái nhà" },
+          { en: "decisions", pos: "n", ipa: "/dɪˈsɪʒ.ənz/", vn: "các quyết định" },
+          { en: "grandparents", pos: "n", ipa: "/ˈɡræn.peə.rənts/", vn: "ông bà" },
+          { en: "bonds", pos: "n", ipa: "/bɒndz/", vn: "mối liên kết gia đình" },
+          { en: "households", pos: "n", ipa: "/ˈhaʊs.həʊldz/", vn: "các hộ gia đình" },
+          { en: "world", pos: "n", ipa: "/wɜːld/", vn: "thế giới" },
+          { en: "extended", pos: "adj", ipa: "/ɪkˈsten.dɪd/", vn: "nhiều thế hệ (gia đình)" },
+          { en: "commanded", pos: "v", ipa: "/kəˈmɑːn.dɪd/", vn: "nhận được, có được" },
+          { en: "storytelling", pos: "n", ipa: "/ˈstɔː.riˌtel.ɪŋ/", vn: "việc kể chuyện" },
+          { en: "materialistically", pos: "adv", ipa: "/məˌtɪə.ri.əˈlɪs.tɪ.kəl.i/", vn: "về mặt vật chất" },
+          { en: "harmoniously", pos: "adv", ipa: "/hɑːˈməʊ.ni.əs.li/", vn: "một cách hòa thuận" },
+          { en: "guidance", pos: "n", ipa: "/ˈɡaɪ.dəns/", vn: "sự hướng dẫn" },
+          { en: "customs", pos: "n", ipa: "/ˈkʌs.təmz/", vn: "phong tục" },
+          { en: "central", pos: "adj", ipa: "/ˈsen.trəl/", vn: "trung tâm, quan trọng" },
+          { en: "fast-paced", pos: "adj", ipa: "/ˌfɑːstˈpeɪst/", vn: "nhịp độ nhanh" }
+        ]
+      },
+      {
+        id: "4-2",
+        title: "2. Preserving Historical Monuments and Relics",
+        bilingualSentences: [
+          {
+            en: "Ancient monuments and historical relics offer priceless insights into our ancestors' achievements and <mark>lifestyles</mark>.",
+            vn: "Các di tích cổ và cổ vật lịch sử cung cấp cái nhìn vô giá về thành tựu và lối sống của tổ tiên chúng ta."
+          },
+          {
+            en: "Historic citadels and temples represent Architectural marvels constructed with extraordinary skill and minimal <mark>technology</mark>.",
+            vn: "Các hoàng thành và đền chùa lịch sử đại diện cho những kỳ quan kiến trúc được xây dựng với kỹ năng phi thường và công nghệ thô sơ."
+          },
+          {
+            en: "Weathering and tourism pressure cause gradual deterioration, requiring urgent restoration <mark>efforts</mark>.",
+            vn: "Sự bào mòn của thời tiết và áp lực du lịch gây ra sự suy thoái dần dần, đòi hỏi các nỗ lực tu bổ cấp bách."
+          },
+          {
+            en: "Conservation experts use advanced techniques to preserve ancient structures without altering their original <mark>authenticity</mark>.",
+            vn: "Các chuyên gia bảo tồn sử dụng kỹ thuật tiên tiến để bảo tồn các công trình cổ mà không làm thay đổi tính nguyên bản."
+          },
+          {
+            en: "Educating young students through museum visits fosters pride in national history and cultural <mark>heritage</mark>.",
+            vn: "Giáo dục học sinh trẻ qua các chuyến thăm bảo tàng thúc đẩy lòng tự hào về lịch sử dân tộc và di sản văn hóa."
+          },
+          {
+            en: "Safeguarding historical landmarks ensures that future generations maintain a strong connection to their <mark>roots</mark>.",
+            vn: "Bảo vệ các danh lam lịch sử đảm bảo các thế hệ tương lai duy trì kết nối mạnh mẽ với cội nguồn của họ."
+          }
+        ],
+        vocab: [
+          { en: "lifestyles", pos: "n", ipa: "/ˈlaɪf.staɪlz/", vn: "lối sống" },
+          { en: "technology", pos: "n", ipa: "/tekˈnɒl.ə.dʒi/", vn: "công nghệ" },
+          { en: "efforts", pos: "n", ipa: "/ˈef.əts/", vn: "các nỗ lực" },
+          { en: "authenticity", pos: "n", ipa: "/ˌɔː.θenˈtɪs.ə.ti/", vn: "tính nguyên bản, chân thực" },
+          { en: "heritage", pos: "n", ipa: "/ˈher.ɪ.tɪdʒ/", vn: "di sản" },
+          { en: "roots", pos: "n", ipa: "/ruːts/", vn: "cội nguồn" },
+          { en: "monuments", pos: "n", ipa: "/ˈmɒn.jə.mənts/", vn: "các di tích, tượng đài" },
+          { en: "relics", pos: "n", ipa: "/ˈrel.ɪks/", vn: "các cổ vật, di vật" },
+          { en: "citadels", pos: "n", ipa: "/ˈsɪt.ə.delz/", vn: "các hoàng thành" },
+          { en: "deterioration", pos: "n", ipa: "/dɪˌtɪə.ri.əˈreɪ.ʃən/", vn: "sự suy thoái" },
+          { en: "restoration", pos: "n", ipa: "/ˌres.təˈreɪ.ʃən/", vn: "sự tu bổ, phục hồi" },
+          { en: "authenticity", pos: "n", ipa: "/ˌɔː.θenˈtɪs.ə.ti/", vn: "tính chân thực" },
+          { en: "safeguarding", pos: "v", ipa: "/ˈseɪf.ɡɑːd.ɪŋ/", vn: "bảo vệ, gìn giữ" },
+          { en: "ancestors", pos: "n", ipa: "/ˈæn.ses.təz/", vn: "tổ tiên" },
+          { en: "priceless", pos: "adj", ipa: "/ˈpraɪs.ləs/", vn: "vô giá" }
+        ]
+      },
+      {
+        id: "4-3",
+        title: "3. Old Traditions vs. Modern Lifestyles",
+        bilingualSentences: [
+          {
+            en: "Rapid modernization has transformed daily habits, causing some traditional customs to gradually fade from practice.",
+            vn: "Hiện đại hóa nhanh chóng đã thay đổi thói quen hàng ngày, khiến một số phong tục truyền thống dần biến mất khỏi thực tế."
+          },
+          {
+            en: "In the past, village festivals gathered entire communities to celebrate harvests and pay respects to local <mark>deities</mark>.",
+            vn: "Trong quá khứ, các lễ hội làng quê quy tụ toàn bộ cộng đồng để ăn mừng vụ mùa và bày tỏ sự tôn kính với các vị thần địa phương."
+          },
+          {
+            en: "Today, busy work schedules reduce the time families spend participating in traditional cultural <mark>rituals</mark>.",
+            vn: "Ngày nay, lịch trình làm việc bận rộn làm giảm thời gian các gia đình dành ra để tham gia các nghi lễ văn hóa truyền thống."
+          },
+          {
+            en: "However, many young people are reinventing old traditions through modern art and digital media <mark>platforms</mark>.",
+            vn: "Tuy nhiên, nhiều người trẻ đang làm mới các truyền thống cũ thông qua nghệ thuật hiện đại và các nền tảng truyền thông số."
+          },
+          {
+            en: "Striking a balance between embracing progress and honoring heritage is essential for national <mark>identity</mark>.",
+            vn: "Tạo ra sự cân bằng giữa đón nhận sự tiến bộ và tôn vinh di sản là điều thiết yếu đối với bản sắc dân tộc."
+          },
+          {
+            en: "Respecting past experiences enriches present living and provides wisdom for navigating future <mark>challenges</mark>.",
+            vn: "Tôn trọng các trải nghiệm quá khứ làm giàu cho cuộc sống hiện tại và cung cấp trí tuệ để vượt qua các thách thức tương lai."
+          }
+        ],
+        vocab: [
+          { en: "deities", pos: "n", ipa: "/ˈdeɪ.ɪ.tiz/", vn: "các vị thần linh" },
+          { en: "rituals", pos: "n", ipa: "/ˈrɪtʃ.u.əlz/", vn: "các nghi lễ" },
+          { en: "platforms", pos: "n", ipa: "/ˈplæt.fɔːmz/", vn: "các nền tảng" },
+          { en: "identity", pos: "n", ipa: "/aɪˈden.tə.ti/", vn: "bản sắc" },
+          { en: "challenges", pos: "n", ipa: "/ˈtʃæl.ɪn.dʒɪz/", vn: "các thách thức" },
+          { en: "modernization", pos: "n", ipa: "/ˌmɒd.ən.aɪˈzeɪ.ʃən/", vn: "sự hiện đại hóa" },
+          { en: "harvests", pos: "n", ipa: "/ˈhɑː.vɪsts/", vn: "các vụ mùa" },
+          { en: "reinventing", pos: "v", ipa: "/ˌriː.ɪnˈvent.ɪŋ/", vn: "làm mới, tái sáng tạo" },
+          { en: "honoring", pos: "v", ipa: "/ˈɒn.ər.ɪŋ/", vn: "tôn vinh" },
+          { en: "wisdom", pos: "n", ipa: "/ˈwɪz.dəm/", vn: "trí tuệ, sự khôn ngoan" },
+          { en: "customs", pos: "n", ipa: "/ˈkʌs.təmz/", vn: "phong tục" },
+          { en: "embracing", pos: "v", ipa: "/ɪmˈbreɪ.sɪŋ/", vn: "đón nhận" },
+          { en: "enriches", pos: "v", ipa: "/ɪnˈrɪtʃ.ɪz/", vn: "làm giàu" },
+          { en: "navigating", pos: "v", ipa: "/ˈnæv.ɪ.ɡeɪt.ɪŋ/", vn: "điều hướng, vượt qua" },
+          { en: "heritage", pos: "n", ipa: "/ˈher.ɪ.tɪdʒ/", vn: "di sản" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 5,
+    name: "Unit 5: Our Experiences",
+    articles: [
+      {
+        id: "5-1",
+        title: "1. Overcoming Fear and Building Confidence",
+        bilingualSentences: [
+          {
+            en: "Facing new challenges, such as public speaking or moving to a new school, often triggers intense fear of <mark>failure</mark>.",
+            vn: "Đối mặt với các thách thức mới, như phát biểu trước công chúng hoặc chuyển đến trường mới, thường kích hoạt nỗi sợ thất bại mãnh liệt."
+          },
+          {
+            en: "Stepping outside one’s comfort zone allows individuals to discover hidden talents and strengthen resilience <mark>skills</mark>.",
+            vn: "Bước ra khỏi vùng an toàn của bản thân cho phép các cá nhân khám phá tài năng ẩn giấu và củng cố kỹ năng phục hồi."
+          },
+          {
+            en: "Mistakes should be viewed as valuable learning opportunities rather than embarrassing personal <mark>shortcomings</mark>.",
+            vn: "Sai lầm nên được coi là cơ hội học tập giá trị chứ không phải là những nhược điểm cá nhân xấu hổ."
+          },
+          {
+            en: "Supportive feedback from mentors and friends boosts self-confidence and encourages persistent <mark>effort</mark>.",
+            vn: "Phản hồi mang tính hỗ trợ từ người hướng dẫn và bạn bè giúp tăng cường sự tự tin và khuyến khích nỗ lực kiên trì."
+          },
+          {
+            en: "Overcoming personal obstacles builds a resilient mindset capable of handling future life <mark>uncertainties</mark>.",
+            vn: "Vượt qua các trở ngại cá nhân xây dựng một tư duy kiên cường có khả năng xử lý những bất định trong cuộc sống tương lai."
+          },
+          {
+            en: "Every small achievement brings us closer to reaching our full personal and academic <mark>potential</mark>.",
+            vn: "Mỗi thành tựu nhỏ đưa chúng ta đến gần hơn tới việc đạt được đầy đủ tiềm năng cá nhân và học thuật."
+          }
+        ],
+        vocab: [
+          { en: "failure", pos: "n", ipa: "/ˈfeɪ.ljər/", vn: "sự thất bại" },
+          { en: "skills", pos: "n", ipa: "/skɪlz/", vn: "các kỹ năng" },
+          { en: "shortcomings", pos: "n", ipa: "/ˈʃɔːtˌkʌm.ɪŋz/", vn: "những nhược điểm" },
+          { en: "effort", pos: "n", ipa: "/ˈef.ət/", vn: "nỗ lực" },
+          { en: "uncertainties", pos: "n", ipa: "/ʌnˈsɜː.tən.tiz/", vn: "những sự bất định" },
+          { en: "potential", pos: "n", ipa: "/pəˈten.ʃəl/", vn: "tiềm năng" },
+          { en: "triggers", pos: "v", ipa: "/ˈtrɪɡ.əz/", vn: "kích hoạt, gây ra" },
+          { en: "comfort zone", pos: "n.phr", ipa: "/ˈkʌm.fət ˌzəʊn/", vn: "vùng an toàn" },
+          { en: "resilience", pos: "n", ipa: "/rɪˈzɪl.i.əns/", vn: "sự kiên cường, phục hồi" },
+          { en: "shortcomings", pos: "n", ipa: "/ˈʃɔːtˌkʌm.ɪŋz/", vn: "khuyết điểm" },
+          { en: "persistent", pos: "adj", ipa: "/pəˈsɪs.tənt/", vn: "kiên trì" },
+          { en: "obstacles", pos: "n", ipa: "/ˈɒb.stə.kəlz/", vn: "trở ngại" },
+          { en: "mindset", pos: "n", ipa: "/ˈmaɪnd.set/", vn: "tư duy" },
+          { en: "embarrassing", pos: "adj", ipa: "/ɪmˈbær.əs.ɪŋ/", vn: "xấu hổ" },
+          { en: "mentors", pos: "n", ipa: "/ˈmen.tɔːz/", vn: "người hướng dẫn" }
+        ]
+      },
+      {
+        id: "5-2",
+        title: "2. Life-Changing Travel Experiences",
+        bilingualSentences: [
+          {
+            en: "Traveling to unfamiliar destinations broadens personal horizons and exposes travelers to diverse cultural <mark>perspectives</mark>.",
+            vn: "Du lịch đến những điểm đến xa lạ mở rộng tầm mắt cá nhân và cho du khách tiếp xúc với các góc nhìn văn hóa đa dạng."
+          },
+          {
+            en: "Navigating language barriers and unfamiliar transit systems enhances problem-solving abilities and self-reliance <mark>skills</mark>.",
+            vn: "Vượt qua rào cản ngôn ngữ và hệ thống giao thông lạ lẫm nâng cao khả năng giải quyết vấn đề và kỹ năng tự lực."
+          },
+          {
+            en: "Interacting with local communities fosters cultural empathy and challenges preconceived personal <mark>stereotypes</mark>.",
+            vn: "Tương tác với các cộng đồng địa phương thúc đẩy sự đồng cảm văn hóa và thách thức các định kiến cá nhân có sẵn."
+          },
+          {
+            en: "Volunteering during trips adds deep purpose to travel, creating lasting memories and meaningful <mark>friendships</mark>.",
+            vn: "Tham gia tình nguyện trong các chuyến đi thêm mục đích sâu sắc cho chuyến du lịch, tạo ra kỷ niệm lâu dài và tình bạn có ý nghĩa."
+          },
+          {
+            en: "Documenting travel experiences through journals or photo blogs helps preserve precious life <mark>lessons</mark>.",
+            vn: "Ghi chép trải nghiệm du lịch qua nhật ký hoặc blog ảnh giúp lưu giữ những bài học cuộc sống quý giá."
+          },
+          {
+            en: "Exploring the world transforms individuals into open-minded and adaptable global <mark>citizens</mark>.",
+            vn: "Khám phá thế giới biến các cá nhân thành những công dân toàn cầu cởi mở và linh hoạt."
+          }
+        ],
+        vocab: [
+          { en: "perspectives", pos: "n", ipa: "/pəˈspek.tɪvz/", vn: "các góc nhìn" },
+          { en: "skills", pos: "n", ipa: "/skɪlz/", vn: "các kỹ năng" },
+          { en: "stereotypes", pos: "n", ipa: "/ˈster.i.ə.taɪps/", vn: "các định kiến" },
+          { en: "friendships", pos: "n", ipa: "/ˈfrend.ʃɪps/", vn: "các tình bạn" },
+          { en: "lessons", pos: "n", ipa: "/ˈles.ənz/", vn: "các bài học" },
+          { en: "citizens", pos: "n", ipa: "/ˈsɪt.ɪ.zənz/", vn: "các công dân" },
+          { en: "horizons", pos: "n", ipa: "/həˈraɪ.zənz/", vn: "tầm mắt, chân trời" },
+          { en: "self-reliance", pos: "n", ipa: "/ˌself.rɪˈlaɪ.əns/", vn: "sự tự lực" },
+          { en: "preconceived", pos: "adj", ipa: "/ˌpriː.kənˈsiːvd/", vn: "được hình thành từ trước" },
+          { en: "adaptable", pos: "adj", ipa: "/əˈdæp.tə.bəl/", vn: "có thể thích ứng" },
+          { en: "destinations", pos: "n", ipa: "/ˌdes.tɪˈneɪ.ʃənz/", vn: "các điểm đến" },
+          { en: "unfamiliar", pos: "adj", ipa: "/ˌʌn.fəˈmɪl.i.ər/", vn: "xa lạ" },
+          { en: "empathy", pos: "n", ipa: "/ˈem.pə.θi/", vn: "sự đồng cảm" },
+          { en: "documenting", pos: "v", ipa: "/ˈdɒk.jə.ment.ɪŋ/", vn: "ghi chép tài liệu" },
+          { en: "precious", pos: "adj", ipa: "/ˈpreʃ.əs/", vn: "quý giá" }
+        ]
+      },
+      {
+        id: "5-3",
+        title: "3. Learning from Failure in Competitions",
+        bilingualSentences: [
+          {
+            en: "Participating in academic or sports competitions exposes students to intense pressure and rigorous <mark>standards</mark>.",
+            vn: "Tham gia các cuộc thi học thuật hoặc thể thao cho học sinh tiếp xúc với áp lực gay gắt và tiêu chuẩn nghiêm ngặt."
+          },
+          {
+            en: "Failing to win a medal can feel devastating, but it serves as an unmatched catalyst for self-improvement <mark>efforts</mark>.",
+            vn: "Không dành được huy chương có thể cảm thấy thất vọng, nhưng nó đóng vai trò như chất xúc tác vô song cho nỗ lực tự hoàn thiện."
+          },
+          {
+            en: "Analyzing lost matches or exam results highlights specific weaknesses needing focused practice <mark>sessions</mark>.",
+            vn: "Phân tích trận thua hoặc kết quả thi làm nổi bật các điểm yếu cụ thể cần các buổi luyện tập tập trung."
+          },
+          {
+            en: "True sportsmanship involves celebrating opponents' victories and maintaining grace under disappointment and <mark>defeat</mark>.",
+            vn: "Tinh thần thể thao thực sự bao gồm chúc mừng chiến thắng của đối thủ và giữ vững sự lịch thiệp khi thất bại."
+          },
+          {
+            en: "Persistence in the face of setbacks builds mental toughness and determination to achieve long-term <mark>goals</mark>.",
+            vn: "Sự kiên trì trước những thụt lùi xây dựng sự vững vàng tâm lý và quyết tâm đạt mục tiêu lâu dài."
+          },
+          {
+            en: "Embracing both victories and losses enriches personal experience and shapes resilient <mark>character</mark>.",
+            vn: "Đón nhận cả chiến thắng lẫn thất bại làm giàu trải nghiệm cá nhân và định hình tính cách kiên cường."
+          }
+        ],
+        vocab: [
+          { en: "standards", pos: "n", ipa: "/ˈstæn.dədz/", vn: "các tiêu chuẩn" },
+          { en: "efforts", pos: "n", ipa: "/ˈef.əts/", vn: "các nỗ lực" },
+          { en: "sessions", pos: "n", ipa: "/ˈseʃ.ənz/", vn: "các buổi luyện tập" },
+          { en: "defeat", pos: "n", ipa: "/dɪˈfiːt/", vn: "sự thất bại, trận thua" },
+          { en: "goals", pos: "n", ipa: "/ɡəʊlz/", vn: "các mục tiêu" },
+          { en: "character", pos: "n", ipa: "/ˈkær.ək.tər/", vn: "tính cách" },
+          { en: "devastating", pos: "adj", ipa: "/ˈdev.ə.steɪ.tɪŋ/", vn: "tàn phá, thất vọng nặng" },
+          { en: "catalyst", pos: "n", ipa: "/ˈkæt.əl.ɪst/", vn: "chất xúc tác" },
+          { en: "sportsmanship", pos: "n", ipa: "/ˈspɔːts.mən.ʃɪp/", vn: "tinh thần thể thao" },
+          { en: "opponents", pos: "n", ipa: "/əˈpəʊ.nənts/", vn: "các đối thủ" },
+          { en: "setbacks", pos: "n", ipa: "/ˈset.bæks/", vn: "sự thụt lùi, trở ngại" },
+          { en: "rigorous", pos: "adj", ipa: "/ˈrɪɡ.ər.əs/", vn: "nghiêm ngặt" },
+          { en: "toughness", pos: "n", ipa: "/ˈtʌf.nəs/", vn: "sự vững vàng, dẻo dai" },
+          { en: "persistence", pos: "n", ipa: "/pəˈsɪs.təns/", vn: "sự kiên trì" },
+          { en: "grace", pos: "n", ipa: "/ɡreɪs/", vn: "sự phong nhã, lịch thiệp" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 6,
+    name: "Unit 6: Viet Nam: Then and Now",
+    articles: [
+      {
+        id: "6-1",
+        title: "1. Infrastructure Transformation in Vietnamese Cities",
+        bilingualSentences: [
+          {
+            en: "Decades ago, Vietnamese streets were dominated by bicycles and narrow brick roads with minimal modern <mark>infrastructure</mark>.",
+            vn: "Nhiều thập kỷ trước, đường phố Việt Nam bị chiếm ưu thế bởi xe đạp và những con đường gạch hẹp với rất ít cơ sở hạ tầng hiện đại."
+          },
+          {
+            en: "Today, rapid economic development has introduced elevated highways, modern bridges, and underground metro <mark>lines</mark>.",
+            vn: "Ngày nay, sự phát triển kinh tế nhanh chóng đã đưa vào sử dụng đường cao tốc trên cao, cầu hiện đại và tuyến tàu điện ngầm."
+          },
+          {
+            en: "High-rise office towers and luxury shopping malls have replaced old tiled-roof houses in urban <mark>centers</mark>.",
+            vn: "Các tòa nhà văn phòng cao tầng và trung tâm thương mại sang trọng đã thay thế những ngôi nhà mái tile cổ ở trung tâm đô thị."
+          },
+          {
+            en: "These physical transformations reflect Viet Nam’s dynamic integration into the global economic <mark>arena</mark>.",
+            vn: "Những thay đổi diện mạo này phản ánh sự hội nhập năng động của Việt Nam vào đấu trường kinh tế toàn cầu."
+          },
+          {
+            en: "However, rapid urban growth also presents challenges regarding traffic management and environmental <mark>preservation</mark>.",
+            vn: "Tuy nhiên, sự phát triển đô thị nhanh chóng cũng đặt ra thách thức về quản lý giao thông và bảo tồn môi trường."
+          },
+          {
+            en: "Modernizing infrastructure while preserving cultural landmarks remains a top priority for urban <mark>planners</mark>.",
+            vn: "Hiện đại hóa cơ sở hạ tầng trong khi bảo tồn di tích văn hóa vẫn là ưu tiên hàng đầu của nhà quy hoạch."
+          }
+        ],
+        vocab: [
+          { en: "infrastructure", pos: "n", ipa: "/ˈɪn.frəˌstrʌk.tʃər/", vn: "cơ sở hạ tầng" },
+          { en: "lines", pos: "n", ipa: "/laɪnz/", vn: "các tuyến (tàu điện)" },
+          { en: "centers", pos: "n", ipa: "/ˈsen.təz/", vn: "các trung tâm" },
+          { en: "arena", pos: "n", ipa: "/əˈriː.nə/", vn: "đấu trường" },
+          { en: "preservation", pos: "n", ipa: "/ˌprez.əˈveɪ.ʃən/", vn: "sự bảo tồn" },
+          { en: "planners", pos: "n", ipa: "/ˈplæn.əz/", vn: "nhà quy hoạch" },
+          { en: "dominated", pos: "v", ipa: "/ˈdɒm.ɪ.neɪ.tɪd/", vn: "chiếm ưu thế" },
+          { en: "elevated", pos: "adj", ipa: "/ˈel.ɪ.veɪ.tɪd/", vn: "trên cao" },
+          { en: "transformations", pos: "n", ipa: "/ˌtræns.fəˈmeɪ.ʃənz/", vn: "sự biến đổi" },
+          { en: "integration", pos: "n", ipa: "/ˌɪn.təˈɡreɪ.ʃən/", vn: "sự hội nhập" },
+          { en: "landmarks", pos: "n", ipa: "/ˈlænd.mɑːks/", vn: "di tích, công trình tiêu biểu" },
+          { en: "tiled-roof", pos: "adj", ipa: "/taɪld ruːf/", vn: "mái ngói" },
+          { en: "dynamic", pos: "adj", ipa: "/daɪˈnæm.ɪk/", vn: "năng động" },
+          { en: "modernizing", pos: "v", ipa: "/ˈmɒd.ən.aɪz.ɪŋ/", vn: "hiện đại hóa" },
+          { en: "priority", pos: "n", ipa: "/praɪˈɒr.ə.ti/", vn: "ưu tiên" }
+        ]
+      },
+      {
+        id: "6-2",
+        title: "2. The Evolution of Education and Learning Tools",
+        bilingualSentences: [
+          {
+            en: "In the past, classrooms relied solely on chalkboards, paper textbooks, and rote memorization <mark>techniques</mark>.",
+            vn: "Trong quá khứ, lớp học hoàn toàn phụ thuộc vào bảng phấn, sách giáo khoa giấy và kỹ thuật học vẹt."
+          },
+          {
+            en: "Today, interactive smartboards, laptops, and digital learning platforms have revolutionized classroom <mark>instruction</mark>.",
+            vn: "Ngày nay, bảng thông minh tương tác, máy tính xách tay và nền tảng học số đã cách mạng hóa việc giảng dạy trên lớp."
+          },
+          {
+            en: "Students can now conduct online research instantly, accessing global databases and open educational <mark>resources</mark>.",
+            vn: "Học sinh giờ đây có thể nghiên cứu trực tuyến tức thì, truy cập các cơ sở dữ liệu toàn cầu và tài nguyên giáo dục mở."
+          },
+          {
+            en: "Teachers act as facilitators, encouraging critical thinking, group collaboration, and creative problem-solving <mark>skills</mark>.",
+            vn: "Giáo viên đóng vai trò là người hướng dẫn, khuyến khích tư duy phản biện, hợp tác nhóm và kỹ năng giải quyết vấn đề sáng tạo."
+          },
+          {
+            en: "Online learning apps enable students in remote provinces to receive high-quality foreign language <mark>instruction</mark>.",
+            vn: "Ứng dụng học trực tuyến cho phép học sinh ở vùng sâu nhận được sự giảng dạy ngoại ngữ chất lượng cao."
+          },
+          {
+            en: "Modern educational reforms prepare young Vietnamese generations to succeed in a technology-driven <mark>world</mark>.",
+            vn: "Cải cách giáo dục hiện đại chuẩn bị cho thế hệ trẻ Việt Nam thành công trong một thế giới vận hành bởi công nghệ."
+          }
+        ],
+        vocab: [
+          { en: "techniques", pos: "n", ipa: "/tekˈniːks/", vn: "các kỹ thuật" },
+          { en: "instruction", pos: "n", ipa: "/ɪnˈstrʌk.ʃən/", vn: "sự giảng dạy" },
+          { en: "resources", pos: "n", ipa: "/rɪˈzɔː.sɪz/", vn: "các tài nguyên" },
+          { en: "skills", pos: "n", ipa: "/skɪlz/", vn: "các kỹ năng" },
+          { en: "world", pos: "n", ipa: "/wɜːld/", vn: "thế giới" },
+          { en: "chalkboards", pos: "n", ipa: "/ˈtʃɔːk.bɔːdz/", vn: "bảng phấn" },
+          { en: "rote", pos: "n / adj", ipa: "/roʊt/", vn: "học vẹt" },
+          { en: "smartboards", pos: "n", ipa: "/ˈsmɑːt.bɔːdz/", vn: "bảng thông minh" },
+          { en: "databases", pos: "n", ipa: "/ˈdeɪ.tə.beɪ.sɪz/", vn: "các cơ sở dữ liệu" },
+          { en: "facilitators", pos: "n", ipa: "/fəˈsɪl.ɪ.teɪ.təz/", vn: "người hướng dẫn" },
+          { en: "reforms", pos: "n", ipa: "/rɪˈfɔːmz/", vn: "các cải cách" },
+          { en: "critical", pos: "adj", ipa: "/ˈkrɪt.ɪ.kəl/", vn: "phản biện" },
+          { en: "collaboration", pos: "n", ipa: "/kəˌlæb.əˈreɪ.ʃən/", vn: "sự hợp tác" },
+          { en: "technology-driven", pos: "adj", ipa: "/tekˈnɒl.ə.dʒi ˈdrɪv.ən/", vn: "vận hành bởi công nghệ" },
+          { en: "revolutionized", pos: "v", ipa: "/ˌrev.əˈluː.ʃən.aɪzd/", vn: "cách mạng hóa" }
+        ]
+      },
+      {
+        id: "6-3",
+        title: "3. Changes in Family Living Standards and Lifestyles",
+        bilingualSentences: [
+          {
+            en: "Decades ago, Vietnamese households experienced severe material shortages and relied heavily on agricultural <mark>labor</mark>.",
+            vn: "Nhiều thập kỷ trước, các hộ gia đình Việt Nam trải qua thiếu hụt vật chất nghiêm trọng và phụ thuộc nhiều vào lao động nông nghiệp."
+          },
+          {
+            en: "Economic reforms under Doi Moi dramatically improved living standards, bringing modern amenities to rural <mark>areas</mark>.",
+            vn: "Các cải cách kinh tế thời Đổi Mới đã cải thiện mạnh mẽ mức sống, mang các tiện ích hiện đại đến vùng nông thôn."
+          },
+          {
+            en: "Today, families enjoy access to clean running water, reliable electricity, and high-speed internet <mark>connections</mark>.",
+            vn: "Ngày nay, các gia đình tận hưởng quyền truy cập nước sạch, điện ổn định và kết nối internet tốc độ cao."
+          },
+          {
+            en: "Family sizes have shrunk from large extended households to smaller nuclear families in urban <mark>apartments</mark>.",
+            vn: "Quy mô gia đình đã thu nhỏ từ các hộ đông con nhiều thế hệ thành các gia đình hạt nhân nhỏ hơn trong các căn hộ đô thị."
+          },
+          {
+            en: "Despite these lifestyle changes, traditional virtues like filial piety and family unity remain deeply <mark>cherished</mark>.",
+            vn: "Dù có những thay đổi lối sống này, các đức tính truyền thống như lòng hiếu thảo và sự đoàn kết gia đình vẫn được trân trọng sâu sắc."
+          },
+          {
+            en: "Blending modern comfort with traditional values creates resilient and happy Vietnamese <mark>homes</mark>.",
+            vn: "Sự kết hợp giữa tiện nghi hiện đại và giá trị truyền thống tạo ra những gia đình Việt Nam kiên cường và hạnh phúc."
+          }
+        ],
+        vocab: [
+          { en: "labor", pos: "n", ipa: "/ˈleɪ.bər/", vn: "lao động" },
+          { en: "areas", pos: "n", ipa: "/ˈeə.ri.əz/", vn: "các khu vực" },
+          { en: "connections", pos: "n", ipa: "/kəˈnek.ʃənz/", vn: "các kết nối" },
+          { en: "apartments", pos: "n", ipa: "/əˈpɑːt.mənts/", vn: "các căn hộ" },
+          { en: "cherished", pos: "adj", ipa: "/ˈtʃer.ɪʃt/", vn: "được trân trọng" },
+          { en: "homes", pos: "n", ipa: "/həʊmz/", vn: "mái ấm gia đình" },
+          { en: "shortages", pos: "n", ipa: "/ˈʃɔː.tɪ.dʒɪz/", vn: "sự thiếu hụt" },
+          { en: "amenities", pos: "n", ipa: "/əˈmiː.nə.tiz/", vn: "tiện ích" },
+          { en: "filial piety", pos: "n.phr", ipa: "/ˈfɪl.i.əl ˈpaɪ.ə.ti/", vn: "lòng hiếu thảo" },
+          { en: "nuclear", pos: "adj", ipa: "/ˈnjuː.kli.ər/", vn: "hạt nhân (gia đình 2 thế hệ)" },
+          { en: "virtues", pos: "n", ipa: "/ˈvɜː.tʃuːz/", vn: "đức tính tốt" },
+          { en: "reforms", pos: "n", ipa: "/rɪˈfɔːmz/", vn: "các cải cách" },
+          { en: "dramatically", pos: "adv", ipa: "/drəˈmæt.ɪ.kəl.i/", vn: "mạnh mẽ, đáng kể" },
+          { en: "shrunk", pos: "v", ipa: "/ʃrʌŋk/", vn: "thu nhỏ lại" },
+          { en: "resilient", pos: "adj", ipa: "/rɪˈzɪl.i.ənt/", vn: "kiên cường" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 7,
+    name: "Unit 7: Natural Wonders of the World",
+    articles: [
+      {
+        id: "7-1",
+        title: "1. Ha Long Bay: A Geological Wonder",
+        bilingualSentences: [
+          {
+            en: "Ha Long Bay is world-renowned for its emerald waters and thousands of towering limestone <mark>islands</mark>.",
+            vn: "Vịnh Hạ Long nổi tiếng thế giới với làn nước xanh ngọc bích và hàng nghìn hòn đảo đá vôi sừng sững."
+          },
+          {
+            en: "Millions of years of geological evolution have sculpted breathtaking caves filled with stunning stalactites and <mark>stalagmites</mark>.",
+            vn: "Hàng triệu năm tiến hóa địa chất đã chạm khắc nên những hang động ngoạn mục đầy nhũ đá và măng đá kinh ngạc."
+          },
+          {
+            en: "Cruising through calm bay waters offers tourists spectacular views of unique rock formations like Fighting Cocks <mark>Islet</mark>.",
+            vn: "Đi thuyền qua vùng nước vịnh êm đềm mang lại cho du khách tầm nhìn tuyệt đẹp về các mỏm đá độc đáo như Hòn Trống Mái."
+          },
+          {
+            en: "UNESCO has recognized Ha Long Bay as a World Natural Heritage Site due to its exceptional aesthetic and geological <mark>value</mark>.",
+            vn: "UNESCO đã công nhận Vịnh Hạ Long là Di sản Thiên nhiên Thế giới nhờ giá trị thẩm mỹ và địa chất đặc biệt."
+          },
+          {
+            en: "However, rising tourist numbers necessitate strict waste management policies to prevent environmental <mark>pollution</mark>.",
+            vn: "Tuy nhiên, lượng du khách tăng đòi hỏi chính sách quản lý rác thải nghiêm ngặt để ngăn ngừa ô nhiễm môi trường."
+          },
+          {
+            en: "Preserving Ha Long Bay ensures that future generations can marvel at this majestic natural <mark>wonder</mark>.",
+            vn: "Bảo tồn Vịnh Hạ Long đảm bảo các thế hệ tương lai có thể kinh ngạc trước kỳ quan thiên nhiên hùng vĩ này."
+          }
+        ],
+        vocab: [
+          { en: "islands", pos: "n", ipa: "/ˈaɪ.ləndz/", vn: "các hòn đảo" },
+          { en: "stalagmites", pos: "n", ipa: "/ˈstæl.əɡ.maɪts/", vn: "các măng đá" },
+          { en: "Islet", pos: "n", ipa: "/ˈaɪ.lət/", vn: "hòn đảo nhỏ" },
+          { en: "value", pos: "n", ipa: "/ˈvæl.juː/", vn: "giá trị" },
+          { en: "pollution", pos: "n", ipa: "/pəˈluː.ʃən/", vn: "sự ô nhiễm" },
+          { en: "wonder", pos: "n", ipa: "/ˈwʌn.dər/", vn: "kỳ quan" },
+          { en: "emerald", pos: "adj / n", ipa: "/ˈem.ər.əld/", vn: "xanh ngọc bích" },
+          { en: "geological", pos: "adj", ipa: "/ˌdʒiː.əˈlɒdʒ.ɪ.kəl/", vn: "thuộc địa chất" },
+          { en: "stalactites", pos: "n", ipa: "/ˈstæl.ək.taɪts/", vn: "nhũ đá" },
+          { en: "aesthetic", pos: "adj", ipa: "/iːsˈθet.ɪk/", vn: "thuộc thẩm mỹ" },
+          { en: "necessitate", pos: "v", ipa: "/nəˈses.ɪ.teɪt/", vn: "đòi hỏi, bắt buộc" },
+          { en: "sculpted", pos: "v", ipa: "/skʌlptɪd/", vn: "chạm khắc" },
+          { en: "breathtaking", pos: "adj", ipa: "/ˈbreθˌteɪ.kɪŋ/", vn: "ngoạn mục" },
+          { en: "majestic", pos: "adj", ipa: "/məˈdʒes.tɪk/", vn: "hùng vĩ, uy nghi" },
+          { en: "evolution", pos: "n", ipa: "/ˌiː.vəˈluː.ʃən/", vn: "sự tiến hóa" }
+        ]
+      },
+      {
+        id: "7-2",
+        title: "2. The Grand Canyon: Nature’s Masterpiece",
+        bilingualSentences: [
+          {
+            en: "Carved over millions of years by the Colorado River, the Grand Canyon exhibits immense geological <mark>scale</mark>.",
+            vn: "Được chạm khắc qua hàng triệu năm bởi sông Colorado, Đại vực Grand Canyon phô diễn quy mô địa chất bao la."
+          },
+          {
+            en: "Layered red rock formations reveal billion-year-old geological history written directly into the Earth's <mark>crust</mark>.",
+            vn: "Các mỏm đá đỏ xếp lớp tiết lộ lịch sử địa chất hàng tỷ năm được ghi trực tiếp vào vỏ Trái Đất."
+          },
+          {
+            en: "Hikers from around the globe travel to trek along challenging canyon trails and view breathtaking sunrise <mark>panoramas</mark>.",
+            vn: "Du khách đi bộ đường dài từ khắp cầu du lịch đến để vượt các đường mòn vực thẳm đầy thách thức và ngắm bình minh ngoạn mục."
+          },
+          {
+            en: "Extreme temperatures and arid conditions create a unique desert ecosystem supporting specialized plant <mark>species</mark>.",
+            vn: "Nhiệt độ cực đoan và điều kiện khô hạn tạo nên hệ sinh thái hoang mạc độc đáo hỗ trợ các loài thực vật đặc hữu."
+          },
+          {
+            en: "Park rangers enforce strict environmental guidelines to prevent littering and preserve fragile rock <mark>surfaces</mark>.",
+            vn: "Kiểm lâm công viên thực thi hướng dẫn môi trường nghiêm ngặt để ngăn xả rác và bảo vệ bề mặt đá mỏng manh."
+          },
+          {
+            en: "Protecting iconic natural wonders preserves Earth's geological legacy for future scientific <mark>discovery</mark>.",
+            vn: "Bảo vệ các kỳ quan thiên nhiên biểu tượng giúp lưu giữ di sản địa chất của Trái Đất cho khám phá khoa học tương lai."
+          }
+        ],
+        vocab: [
+          { en: "scale", pos: "n", ipa: "/skeɪl/", vn: "quy mô" },
+          { en: "crust", pos: "n", ipa: "/krʌst/", vn: "vỏ Trái Đất" },
+          { en: "panoramas", pos: "n", ipa: "/ˌpæn.əˈrɑː.məz/", vn: "toàn cảnh" },
+          { en: "species", pos: "n", ipa: "/ˈspiː.ʃiːz/", vn: "các loài" },
+          { en: "surfaces", pos: "n", ipa: "/ˈsɜː.fɪ.sɪz/", vn: "các bề mặt" },
+          { en: "discovery", pos: "n", ipa: "/dɪˈskʌv.ər.i/", vn: "sự khám phá" },
+          { en: "carved", pos: "v", ipa: "/kɑːvd/", vn: "chạm khắc" },
+          { en: "layered", pos: "adj", ipa: "/ˈleɪ.əd/", vn: "xếp lớp" },
+          { en: "arid", pos: "adj", ipa: "/ˈær.ɪd/", vn: "khô hạn" },
+          { en: "rangers", pos: "n", ipa: "/ˈreɪn.dʒəz/", vn: "kiểm lâm" },
+          { en: "iconic", pos: "adj", ipa: "/aɪˈkɒn.ɪk/", vn: "mang tính biểu tượng" },
+          { en: "legacy", pos: "n", ipa: "/ˈleɡ.ə.si/", vn: "di sản" },
+          { en: "exhibits", pos: "v", ipa: "/ɪɡˈzɪb.ɪts/", vn: "phô diễn, trưng bày" },
+          { en: "trek", pos: "v / n", ipa: "/trek/", vn: "đi bộ đường dài" },
+          { en: "fragile", pos: "adj", ipa: "/ˈfrædʒ.aɪl/", vn: "mỏng manh" }
+        ]
+      },
+      {
+        id: "7-3",
+        title: "3. Son Doong Cave: The World's Largest Cave System",
+        bilingualSentences: [
+          {
+            en: "Located in Phong Nha-Ke Bang National Park, Son Doong Cave is recognized as the largest natural cave on <mark>Earth</mark>.",
+            vn: "Tọa lạc tại Vườn quốc gia Phong Nha-Kẻ Bàng, Hang Sơn Đoòng được công nhận là hang động tự nhiên lớn nhất Trái Đất."
+          },
+          {
+            en: "The cave is so massive that it contains its own subterranean rainforest, localized weather system, and flowing <mark>river</mark>.",
+            vn: "Hang động khổng lồ đến mức chứa cả rừng mưa dưới lòng đất, hệ thống thời tiết cục bộ và dòng sông ngầm."
+          },
+          {
+            en: "Collapses in the cave ceiling, known as dolines, allow sunlight to penetrate, nurturing unique plant <mark>ecosystems</mark>.",
+            vn: "Những điểm sụt trên trần hang, gọi là hố sập (doline), cho phép ánh sáng mặt trời chiếu vào, nuôi dưỡng hệ sinh thái thực vật độc đáo."
+          },
+          {
+            en: "Exploration tours are strictly limited to small group numbers annually to minimize human ecological <mark>impact</mark>.",
+            vn: "Tour khám phá bị giới hạn nghiêm ngặt theo số lượng nhóm nhỏ hàng năm để giảm thiểu tác động sinh thái con người."
+          },
+          {
+            en: "Experienced cave guides and porters ensure safety while enforcing stringent environmental protection <mark>rules</mark>.",
+            vn: "Hướng dẫn viên và porter giàu kinh nghiệm đảm bảo an toàn đồng thời thực thi các quy tắc bảo vệ môi trường khắt khe."
+          },
+          {
+            en: "Preserving Son Doong maintains Viet Nam’s reputation as a world leader in eco-friendly adventure <mark>tourism</mark>.",
+            vn: "Bảo tồn Sơn Đoòng duy trì uy tín của Việt Nam như một quốc gia dẫn đầu thế giới về du lịch mạo hiểm thân thiện môi trường."
+          }
+        ],
+        vocab: [
+          { en: "Earth", pos: "n", ipa: "/ɜːθ/", vn: "Trái Đất" },
+          { en: "river", pos: "n", ipa: "/ˈrɪv.ər/", vn: "dòng sông" },
+          { en: "ecosystems", pos: "n", ipa: "/ˈiː.kəʊˌsɪs.təmz/", vn: "các hệ sinh thái" },
+          { en: "impact", pos: "n", ipa: "/ˈɪm.pækt/", vn: "tác động" },
+          { en: "rules", pos: "n", ipa: "/ruːlz/", vn: "quy tắc" },
+          { en: "tourism", pos: "n", ipa: "/ˈtʊə.rɪz.əm/", vn: "ngành du lịch" },
+          { en: "subterranean", pos: "adj", ipa: "/ˌsʌb.təˈreɪ.ni.ən/", vn: "dưới lòng đất" },
+          { en: "dolines", pos: "n", ipa: "/ˈdɒl.iːnz/", vn: "hố sập địa chất" },
+          { en: "penetrate", pos: "v", ipa: "/ˈpen.ɪ.treɪt/", vn: "xuyên qua, chiếu vào" },
+          { en: "stringent", pos: "adj", ipa: "/ˈstrɪn.dʒənt/", vn: "khắt khe, nghiêm ngặt" },
+          { en: "reputation", pos: "n", ipa: "/ˌrep.jəˈteɪ.ʃən/", vn: "danh tiếng, uy tín" },
+          { en: "massive", pos: "adj", ipa: "/ˈmæs.ɪv/", vn: "khổng lồ" },
+          { en: "porters", pos: "n", ipa: "/ˈpɔː.təz/", vn: "người mang vác đồ" },
+          { en: "adventure", pos: "n / adj", ipa: "/ədˈven.tʃər/", vn: "mạo hiểm" },
+          { en: "nurturing", pos: "v", ipa: "/ˈnɜː.tʃər.ɪŋ/", vn: "nuôi dưỡng" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 8,
+    name: "Unit 8: Tourism",
+    articles: [
+      {
+        id: "8-1",
+        title: "1. The Benefits and Drawbacks of Tourism Growth",
+        bilingualSentences: [
+          {
+            en: "Tourism growth generates foreign currency revenue and creates employment across hospitality and transport <mark>sectors</mark>.",
+            vn: "Tăng trưởng du lịch tạo ra doanh thu ngoại tệ và tạo việc làm trong các ngành dịch vụ lưu trú và vận tải."
+          },
+          {
+            en: "Infrastructure investments in airports and highways improve local connectivity and boost regional trade <mark>activities</mark>.",
+            vn: "Đầu tư cơ sở hạ tầng vào sân bay và đường cao tốc nâng cao kết nối địa phương và thúc đẩy hoạt động thương mại vùng."
+          },
+          {
+            en: "However, overcrowding at famous destinations leads to littering, noise pollution, and rising living <mark>costs</mark>.",
+            vn: "Tuy nhiên, quá tải tại các điểm đến nổi tiếng dẫn đến xả rác, ô nhiễm tiếng ồn và chi phí sinh hoạt tăng."
+          },
+          {
+            en: "Overcommercialization can erode traditional cultural values and turn authentic heritage into staged <mark>performances</mark>.",
+            vn: "Thương mại hóa quá đà có thể làm xói mòn giá trị văn hóa truyền thống và biến di sản chân thực thành các màn biểu diễn dàn dựng."
+          },
+          {
+            en: "Balanced tourism planning ensures that economic advantages do not occur at the expense of environmental <mark>degradation</mark>.",
+            vn: "Quy hoạch du lịch cân bằng đảm bảo lợi ích kinh tế không diễn ra bằng cách đánh đổi sự suy thoái môi trường."
+          },
+          {
+            en: "Developing eco-friendly travel models guarantees long-term economic prosperity for host <mark>communities</mark>.",
+            vn: "Phát triển mô hình du lịch thân thiện môi trường đảm bảo sự thịnh vượng kinh tế lâu dài cho các cộng đồng địa phương."
+          }
+        ],
+        vocab: [
+          { en: "sectors", pos: "n", ipa: "/ˈsek.təz/", vn: "các ngành, lĩnh vực" },
+          { en: "activities", pos: "n", ipa: "/ækˈtɪv.ə.tiz/", vn: "các hoạt động" },
+          { en: "costs", pos: "n", ipa: "/kɒsts/", vn: "chi phí" },
+          { en: "performances", pos: "n", ipa: "/pəˈfɔː.mənsɪz/", vn: "các màn biểu diễn" },
+          { en: "degradation", pos: "n", ipa: "/ˌdeɡ.rəˈdeɪ.ʃən/", vn: "sự suy thoái" },
+          { en: "communities", pos: "n", ipa: "/kəˈmjuː.nə.tiz/", vn: "các cộng đồng" },
+          { en: "hospitality", pos: "n", ipa: "/ˌhɒs.pɪˈtæl.ə.ti/", vn: "ngành dịch vụ khách sạn, nhà hàng" },
+          { en: "overcrowding", pos: "n", ipa: "/ˌəʊ.vəˈkraʊ.dɪŋ/", vn: "sự quá tải đông đúc" },
+          { en: "overcommercialization", pos: "n", ipa: "/ˌəʊ.və.kəˌmɜː.ʃəl.aɪˈzeɪ.ʃən/", vn: "sự thương mại hóa quá đà" },
+          { en: "authentic", pos: "adj", ipa: "/ɔːˈθen.tɪk/", vn: "chân thực" },
+          { en: "prosperity", pos: "n", ipa: "/prɒsˈper.ə.ti/", vn: "sự thịnh vượng" },
+          { en: "currency", pos: "n", ipa: "/ˈkʌr.ən.si/", vn: "tiền tệ" },
+          { en: "connectivity", pos: "n", ipa: "/ˌkɒn.ekˈtɪv.ə.ti/", vn: "sự kết nối" },
+          { en: "erode", pos: "v", ipa: "/ɪˈrəʊd/", vn: "xói mòn" },
+          { en: "advantages", pos: "n", ipa: "/ədˈvɑːn.tɪ.dʒɪz/", vn: "các lợi ích" }
+        ]
+      },
+      {
+        id: "8-2",
+        title: "2. The Rise of Eco-Tourism and Sustainable Travel",
+        bilingualSentences: [
+          {
+            en: "Eco-tourism emphasizes responsible travel that conserves natural environments and respects local indigenous <mark>cultures</mark>.",
+            vn: "Du lịch sinh thái nhấn mạnh du lịch có trách nhiệm giúp bảo tồn môi trường tự nhiên và tôn trọng văn hóa bản địa."
+          },
+          {
+            en: "Travelers stay in solar-powered eco-lodges and participate in conservation tasks like planting <mark>trees</mark>.",
+            vn: "Du khách ở tại các nhà nghỉ sinh thái dùng năng lượng mặt trời và tham gia nhiệm vụ bảo tồn như trồng cây."
+          },
+          {
+            en: "Guided wildlife tours educate visitors without disturbing animal nesting grounds or natural <mark>habitats</mark>.",
+            vn: "Tour động vật hoang dã có hướng dẫn giúp giáo dục du khách mà không làm phiền nơi làm tổ hay môi trường sống của động vật."
+          },
+          {
+            en: "Direct financial contributions from eco-tourists support national park protection and ranger <mark>patrols</mark>.",
+            vn: "Đóng góp tài chính trực tiếp từ du khách sinh thái hỗ trợ bảo vệ công viên quốc gia và các đợt tuần tra của kiểm lâm."
+          },
+          {
+            en: "Supporting local artisans and farmers guarantees that tourism revenue stays directly within the village <mark>economy</mark>.",
+            vn: "Hỗ trợ nghệ nhân và nông dân địa phương đảm bảo doanh thu du lịch ở lại trực tiếp trong nền kinh tế làng xã."
+          },
+          {
+            en: "Sustainable travel habits protect fragile natural wonders for coming generations of global <mark>explorers</mark>.",
+            vn: "Thói quen du lịch bền vững bảo vệ các kỳ quan thiên nhiên mỏng manh cho các thế hệ nhà khám phá toàn cầu tương lai."
+          }
+        ],
+        vocab: [
+          { en: "cultures", pos: "n", ipa: "/ˈkʌl.tʃəz/", vn: "các nền văn hóa" },
+          { en: "trees", pos: "n", ipa: "/triːz/", vn: "cây cối" },
+          { en: "habitats", pos: "n", ipa: "/ˈhæb.ɪ.tæts/", vn: "môi trường sống" },
+          { en: "patrols", pos: "n", ipa: "/pəˈtrəʊlz/", vn: "các đợt tuần tra" },
+          { en: "economy", pos: "n", ipa: "/iˈkɒn.ə.mi/", vn: "nền kinh tế" },
+          { en: "explorers", pos: "n", ipa: "/ɪkˈsplɔː.rəz/", vn: "các nhà khám phá" },
+          { en: "indigenous", pos: "adj", ipa: "/ɪnˈdɪdʒ.ɪ.nəs/", vn: "bản địa" },
+          { en: "eco-lodges", pos: "n", ipa: "/ˈiː.kəʊˌlɒdʒ.ɪz/", vn: "nhà nghỉ sinh thái" },
+          { en: "disturbing", pos: "v", ipa: "/dɪˈstɜː.bɪŋ/", vn: "làm phiền" },
+          { en: "contributions", pos: "n", ipa: "/ˌkɒn.trɪˈbjuː.ʃənz/", vn: "sự đóng góp" },
+          { en: "artisans", pos: "n", ipa: "/ˌɑː.tɪˈzænz/", vn: "nghệ nhân" },
+          { en: "fragile", pos: "adj", ipa: "/ˈfrædʒ.aɪl/", vn: "mỏng manh" },
+          { en: "conserves", pos: "v", ipa: "/kənˈsɜːvz/", vn: "bảo tồn" },
+          { en: "revenue", pos: "n", ipa: "/ˈrev.ən.juː/", vn: "doanh thu" },
+          { en: "sustainable", pos: "adj", ipa: "/səˈsteɪ.nə.bəl/", vn: "bền vững" }
+        ]
+      },
+      {
+        id: "8-3",
+        title: "3. Cultural Homestays in Viet Nam",
+        bilingualSentences: [
+          {
+            en: "Cultural homestays offer travelers a unique opportunity to immerse themselves in authentic local <mark>traditions</mark>.",
+            vn: "Homestay văn hóa mang lại cho du khách cơ hội độc đáo để đắm mình vào các truyền thống bản địa chân thực."
+          },
+          {
+            en: "Guests live alongside host families, sharing traditional home-cooked meals prepared with homegrown <mark>ingredients</mark>.",
+            vn: "Khách sống cùng các gia đình chủ nhà, chia sẻ bữa ăn truyền thống tự nấu làm từ nguyên liệu tự trồng."
+          },
+          {
+            en: "Participating in daily farming or handicraft activities offers deep insight into rural Vietnamese <mark>lifestyles</mark>.",
+            vn: "Tham gia vào hoạt động nông nghiệp hoặc làm thủ công hàng ngày mang lại cái nhìn sâu sắc về lối sống nông thôn Việt Nam."
+          },
+          {
+            en: "Homestay operations generate direct income for ethnic minority families in mountainous <mark>regions</mark>.",
+            vn: "Hoạt động homestay tạo thu nhập trực tiếp cho các gia đình dân tộc thiểu số ở các vùng miền núi."
+          },
+          {
+            en: "Cultural exchange during homestay stays builds cross-cultural understanding and lifelong international <mark>friendships</mark>.",
+            vn: "Giao lưu văn hóa trong thời gian ở homestay xây dựng sự hiểu biết giữa các văn hóa và tình bạn quốc tế suốt đời."
+          },
+          {
+            en: "Preserving local hospitality values enhances Viet Nam’s charm as a welcoming tourist <mark>destination</mark>.",
+            vn: "Gìn giữ giá trị hiếu khách địa phương làm tăng sức hút của Việt Nam như một điểm đến du lịch mến khách."
+          }
+        ],
+        vocab: [
+          { en: "traditions", pos: "n", ipa: "/trəˈdɪʃ.ənz/", vn: "các truyền thống" },
+          { en: "ingredients", pos: "n", ipa: "/ɪnˈɡriː.di.ənts/", vn: "các nguyên liệu" },
+          { en: "lifestyles", pos: "n", ipa: "/ˈlaɪf.staɪlz/", vn: "lối sống" },
+          { en: "regions", pos: "n", ipa: "/ˈriː.dʒənz/", vn: "các vùng miền" },
+          { en: "friendships", pos: "n", ipa: "/ˈfrend.ʃɪps/", vn: "các tình bạn" },
+          { en: "destination", pos: "n", ipa: "/ˌdes.tɪˈneɪ.ʃən/", vn: "điểm đến" },
+          { en: "immerse", pos: "v", ipa: "/ɪˈmɜːs/", vn: "đắm mình, hòa nhập" },
+          { en: "authentic", pos: "adj", ipa: "/ɔːˈθen.tɪk/", vn: "chân thực" },
+          { en: "homegrown", pos: "adj", ipa: "/ˈhəʊm.ɡrəʊn/", vn: "tự trồng" },
+          { en: "operations", pos: "n", ipa: "/ˌɒp.ərˈeɪ.ʃənz/", vn: "hoạt động vận hành" },
+          { en: "hospitality", pos: "n", ipa: "/ˌhɒs.pɪˈtæl.ə.ti/", vn: "sự hiếu khách" },
+          { en: "cross-cultural", pos: "adj", ipa: "/ˌkrɒs ˈkʌl.tʃər.əl/", vn: "giữa các văn hóa" },
+          { en: "minority", pos: "n / adj", ipa: "/maɪˈnɒr.ə.ti/", vn: "thiểu số" },
+          { en: "insight", pos: "n", ipa: "/ˈɪn.saɪt/", vn: "cái nhìn sâu sắc" },
+          { en: "charm", pos: "n", ipa: "/tʃɑːm/", vn: "sức hút, vẻ đẹp" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 9,
+    name: "Unit 9: World Englishes",
+    articles: [
+      {
+        id: "9-1",
+        title: "1. English as a Global Lingua Franca",
+        bilingualSentences: [
+          {
+            en: "English has evolved into the world's primary lingua franca, connecting people across diverse linguistic and cultural <mark>backgrounds</mark>.",
+            vn: "Tiếng Anh đã tiến hóa thành ngôn ngữ chung chính của thế giới, kết nối mọi người thuộc các nền tảng ngôn ngữ và văn hóa đa dạng."
+          },
+          {
+            en: "International business transactions, scientific research, and aviation communication rely predominantly on English <mark>proficiency</mark>.",
+            vn: "Các giao dịch kinh doanh quốc tế, nghiên cứu khoa học và giao tiếp hàng không dựa chủ yếu vào sự thành thạo tiếng Anh."
+          },
+          {
+            en: "Learning English opens access to vast online educational resources and global job <mark>opportunities</mark>.",
+            vn: "Học tiếng Anh mở ra quyền truy cập vào các tài nguyên giáo dục trực tuyến khổng lồ và cơ hội việc làm toàn cầu."
+          },
+          {
+            en: "However, regional variations in vocabulary, pronunciation, and grammar have created distinct World English <mark>varieties</mark>.",
+            vn: "Tuy nhiên, các biến thể khu vực về từ vựng, phát âm và ngữ pháp đã tạo ra các biến thể Tiếng Anh thế giới khác biệt."
+          },
+          {
+            en: "Embracing linguistic diversity allows global speakers to communicate effectively without losing their cultural <mark>identity</mark>.",
+            vn: "Đón nhận sự đa dạng ngôn ngữ cho phép người nói toàn cầu giao tiếp hiệu quả mà không làm mất đi bản sắc văn hóa của họ."
+          },
+          {
+            en: "Mastering English empowers young learners to actively participate in international academic and professional <mark>arenas</mark>.",
+            vn: "Thành thạo tiếng Anh trao quyền cho người học trẻ tham gia tích cực vào đấu trường học thuật và chuyên nghiệp quốc tế."
+          }
+        ],
+        vocab: [
+          { en: "backgrounds", pos: "n", ipa: "/ˈbæk.ɡraʊndz/", vn: "nền tảng văn hóa" },
+          { en: "proficiency", pos: "n", ipa: "/prəˈfɪʃ.ən.si/", vn: "sự thành thạo" },
+          { en: "opportunities", pos: "n", ipa: "/ˌɒp.əˈtʃuː.nə.tiz/", vn: "các cơ hội" },
+          { en: "varieties", pos: "n", ipa: "/vəˈraɪ.ə.tiz/", vn: "các biến thể" },
+          { en: "identity", pos: "n", ipa: "/aɪˈden.tə.ti/", vn: "bản sắc" },
+          { en: "arenas", pos: "n", ipa: "/əˈriː.nəz/", vn: "các đấu trường" },
+          { en: "lingua franca", pos: "n.phr", ipa: "/ˌlɪŋ.ɡwə ˈfræŋ.kə/", vn: "ngôn ngữ chung" },
+          { en: "aviation", pos: "n", ipa: "/ˌeɪ.viˈeɪ.ʃən/", vn: "ngành hàng không" },
+          { en: "predominantly", pos: "adv", ipa: "/prɪˈdɒm.ɪ.nənt.li/", vn: "một cách chủ yếu" },
+          { en: "variations", pos: "n", ipa: "/ˌveə.riˈeɪ.ʃənz/", vn: "các biến thể, sự rẽ nhánh" },
+          { en: "linguistic", pos: "adj", ipa: "/lɪŋˈɡwɪs.tɪk/", vn: "thuộc ngôn ngữ" },
+          { en: "empowers", pos: "v", ipa: "/ɪmˈpaʊəz/", vn: "trao quyền" },
+          { en: "transactions", pos: "n", ipa: "/trænˈzæk.ʃənz/", vn: "các giao dịch" },
+          { en: "pronunciation", pos: "n", ipa: "/prəˌnʌn.siˈeɪ.ʃən/", vn: "sự phát âm" },
+          { en: "mastering", pos: "v", ipa: "/ˈmɑː.stər.ɪŋ/", vn: "làm chủ, thành thạo" }
+        ]
+      },
+      {
+        id: "9-2",
+        title: "2. British vs. American English",
+        bilingualSentences: [
+          {
+            en: "British and American English represent two major standardized varieties with noticeable spelling and vocabulary <mark>differences</mark>.",
+            vn: "Tiếng Anh-Anh và Tiếng Anh-Mỹ đại diện cho hai biến thể chuẩn hóa chính với những khác biệt rõ rệt về chính tả và từ vựng."
+          },
+          {
+            en: "For instance, words like 'color' and 'center' in American English are spelled 'colour' and 'centre' in British <mark>English</mark>.",
+            vn: "Ví dụ, các từ như 'color' và 'center' trong Tiếng Anh-Mỹ được đánh vần là 'colour' và 'centre' trong Tiếng Anh-Anh."
+          },
+          {
+            en: "Vocabulary also varies, such as 'apartment' versus 'flat', or 'elevator' versus <mark>'lift'</mark>.",
+            vn: "Từ vựng cũng khác nhau, chẳng hạn như 'apartment' so với 'flat', hoặc 'elevator' so me 'lift'."
+          },
+          {
+            en: "Accent variations between the two regions are influenced by historical immigration and geographical <mark>separation</mark>.",
+            vn: "Sự khác biệt về giọng giữa hai khu vực bị ảnh hưởng bởi nhập cư lịch sử và sự chia cắt địa lý."
+          },
+          {
+            en: "Despite these differences, speakers of both varieties understand each other effortlessly in formal <mark>contexts</mark>.",
+            vn: "Bất chấp những khác biệt này, người nói cả hai biến thể hiểu nhau một cách dễ dàng trong các bối cảnh trang trọng."
+          },
+          {
+            en: "Exposure to various accents enhances listening comprehension and builds global communicative <mark>flexibility</mark>.",
+            vn: "Việc tiếp xúc với nhiều giọng khác nhau nâng cao khả năng nghe hiểu và xây dựng sự linh hoạt trong giao tiếp toàn cầu."
+          }
+        ],
+        vocab: [
+          { en: "differences", pos: "n", ipa: "/ˈdɪf.ər.ən.sɪz/", vn: "các sự khác biệt" },
+          { en: "English", pos: "n", ipa: "/ˈɪŋ.ɡlɪʃ/", vn: "Tiếng Anh" },
+          { en: "'lift'", pos: "n", ipa: "/lɪft/", vn: "thang máy (Anh-Anh)" },
+          { en: "separation", pos: "n", ipa: "/ˌsep.əˈreɪ.ʃən/", vn: "sự chia cắt" },
+          { en: "contexts", pos: "n", ipa: "/ˈkɒn.teksts/", vn: "các bối cảnh" },
+          { en: "flexibility", pos: "n", ipa: "/ˌflek.səˈbɪl.ə.ti/", vn: "sự linh hoạt" },
+          { en: "standardized", pos: "adj", ipa: "/ˈstæn.də.daɪzd/", vn: "được chuẩn hóa" },
+          { en: "spelling", pos: "n", ipa: "/ˈspel.ɪŋ/", vn: "chính tả" },
+          { en: "immigration", pos: "n", ipa: "/ˌɪm.ɪˈɡreɪ.ʃən/", vn: "sự nhập cư" },
+          { en: "effortlessly", pos: "adv", ipa: "/ˈef.ət.ləs.li/", vn: "một cách dễ dàng" },
+          { en: "comprehension", pos: "n", ipa: "/ˌkɒm.prɪˈhen.ʃən/", vn: "sự hiểu" },
+          { en: "varieties", pos: "n", ipa: "/vəˈraɪ.ə.tiz/", vn: "các biến thể" },
+          { en: "accent", pos: "n", ipa: "/ˈæk.sənt/", vn: "giọng phát âm" },
+          { en: "geographical", pos: "adj", ipa: "/ˌdʒiː.əˈɡræf.ɪ.kəl/", vn: "thuộc địa lý" },
+          { en: "communicative", pos: "adj", ipa: "/kəˈmjuː.nɪ.kə.tɪv/", vn: "thuộc giao tiếp" }
+        ]
+      },
+      {
+        id: "9-3",
+        title: "3. Learning English for Future Career Opportunities",
+        bilingualSentences: [
+          {
+            en: "Fluency in English provides a competitive edge in job markets, enabling professionals to work for multinational <mark>corporations</mark>.",
+            vn: "Thành thạo tiếng Anh mang lại lợi thế cạnh tranh trên thị trường việc làm, cho phép các chuyên gia làm việc cho các tập đoàn đa quốc gia."
+          },
+          {
+            en: "Strong English communication skills facilitate effective cross-border negotiations and international client <mark>relations</mark>.",
+            vn: "Kỹ năng giao tiếp tiếng Anh tốt tạo điều kiện cho các cuộc đàm phán xuyên biên giới và quan hệ khách hàng quốc tế hiệu quả."
+          },
+          {
+            en: "Online learning platforms provide accessible preparation courses for standardized tests like IELTS and <mark>TOEIC</mark>.",
+            vn: "Các nền tảng học trực tuyến cung cấp các khóa luyện thi dễ tiếp cận cho các kỳ thi chuẩn hóa như IELTS và TOEIC."
+          },
+          {
+            en: "Regular practice with native speakers improves conversational naturalness and eliminates speaking <mark>anxiety</mark>.",
+            vn: "Luyện tập thường xuyên với người bản xứ cải thiện sự tự nhiên trong giao tiếp và loại bỏ tâm lý lo âu khi nói."
+          },
+          {
+            en: "Engineers and researchers require technical English literacy to read global patents and scientific <mark>publications</mark>.",
+            vn: "Giới kỹ sư và nhà nghiên cứu cần năng lực tiếng Anh chuyên ngành để đọc bằng sáng chế toàn cầu và các ấn phẩm khoa học."
+          },
+          {
+            en: "Investing time in language mastery unlocks endless career paths and personal growth <mark>milestones</mark>.",
+            vn: "Đầu tư thời gian để làm chủ ngôn ngữ mở ra những con đường nghề nghiệp không giới hạn và các cột mốc phát triển cá nhân."
+          }
+        ],
+        vocab: [
+          { en: "corporations", pos: "n", ipa: "/ˌkɔː.pərˈeɪ.ʃənz/", vn: "các tập đoàn" },
+          { en: "relations", pos: "n", ipa: "/rɪˈleɪ.ʃənz/", vn: "các mối quan hệ" },
+          { en: "TOEIC", pos: "n", ipa: "/ˈtəʊ.ɪk/", vn: "kỳ thi TOEIC" },
+          { en: "anxiety", pos: "n", ipa: "/æŋˈzaɪ.ə.ti/", vn: "sự lo âu" },
+          { en: "publications", pos: "n", ipa: "/ˌpʌb.lɪˈkeɪ.ʃənz/", vn: "các ấn phẩm" },
+          { en: "milestones", pos: "n", ipa: "/ˈmaɪl.stəʊnz/", vn: "các cột mốc" },
+          { en: "fluency", pos: "n", ipa: "/ˈfluː.ən.si/", vn: "sự trôi chảy" },
+          { en: "competitive edge", pos: "n.phr", ipa: "/kəmˈpet.ɪ.tɪv edʒ/", vn: "lợi thế cạnh tranh" },
+          { en: "multinational", pos: "adj", ipa: "/ˌmʌl.tiˈnæʃ.ən.əl/", vn: "đa quốc gia" },
+          { en: "standardized", pos: "adj", ipa: "/ˈstæn.də.daɪzd/", vn: "được chuẩn hóa" },
+          { en: "conversational", pos: "adj", ipa: "/ˌkɒn.vəˈseɪ.ʃən.əl/", vn: "thuộc giao tiếp" },
+          { en: "literacy", pos: "n", ipa: "/ˈlɪt.ər.ə.si/", vn: "năng lực đọc viết/hiểu" },
+          { en: "mastery", pos: "n", ipa: "/ˈmɑː.stər.i/", vn: "sự làm chủ, thành thạo" },
+          { en: "patents", pos: "n", ipa: "/ˈpeɪ.tənts/", vn: "các bằng sáng chế" },
+          { en: "negotiations", pos: "n", ipa: "/nəˌɡəʊ.ʃiˈeɪ.ʃənz/", vn: "các cuộc đàm phán" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 10,
+    name: "Unit 10: Planet Earth",
+    articles: [
+      {
+        id: "10-1",
+        title: "1. Global Warming and Climate Crisis",
+        bilingualSentences: [
+          {
+            en: "Excessive emissions of carbon dioxide trap heat in the atmosphere, driving global warming and climate <mark>instability</mark>.",
+            vn: "Lượng phát thải carbon dioxide quá đà giữ nhiệt trong khí quyển, thúc đẩy sự nóng lên toàn cầu và mất ổn định khí hậu."
+          },
+          {
+            en: "Melting polar ice caps cause rising sea levels, threatening low-lying coastal regions with severe <mark>flooding</mark>.",
+            vn: "Các băng tan ở cực gây dâng cao mực nước biển, đe dọa các vùng duyên hải thấp với nguy cơ ngập lụt nghiêm trọng."
+          },
+          {
+            en: "Frequent extreme weather events, like prolonged droughts and super typhoons, destroy agricultural <mark>yields</mark>.",
+            vn: "Các hiện tượng thời tiết cực đoan thường xuyên, như hạn hán kéo dài và siêu bão, phá hủy sản lượng nông nghiệp."
+          },
+          {
+            en: "Transitioning to clean renewable energy sources like wind and solar is vital to achieving carbon <mark>neutrality</mark>.",
+            vn: "Chuyển sang các nguồn năng lượng tái tạo sạch như gió và mặt trời là điều tối quan trọng để đạt trung hòa carbon."
+          },
+          {
+            en: "International environmental treaties commit signatory nations to enforcing strict emission reduction <mark>targets</mark>.",
+            vn: "Các điều ước môi trường quốc tế cam kết các quốc gia ký kết thực thi mục tiêu cắt giảm phát thải nghiêm ngặt."
+          },
+          {
+            en: "Urgent climate action guarantees a safe and habitable planet for coming future <mark>generations</mark>.",
+            vn: "Hành động khí hậu cấp bách đảm bảo một hành tinh an toàn và có thể sinh sống cho các thế hệ tương lai."
+          }
+        ],
+        vocab: [
+          { en: "instability", pos: "n", ipa: "/ˌɪn.stəˈbɪl.ə.ti/", vn: "sự mất ổn định" },
+          { en: "flooding", pos: "n", ipa: "/ˈflʌd.ɪŋ/", vn: "sự ngập lụt" },
+          { en: "yields", pos: "n", ipa: "/jiːldz/", vn: "sản lượng" },
+          { en: "neutrality", pos: "n", ipa: "/njuːˈtræl.ə.ti/", vn: "sự trung hòa" },
+          { en: "targets", pos: "n", ipa: "/ˈtɑː.ɡɪts/", vn: "các mục tiêu" },
+          { en: "generations", pos: "n", ipa: "/ˌdʒen.əˈreɪ.ʃənz/", vn: "các thế hệ" },
+          { en: "excessive", pos: "adj", ipa: "/ɪkˈses.ɪv/", vn: "quá đà" },
+          { en: "polar", pos: "adj", ipa: "/ˈpəʊ.lər/", vn: "thuộc về cực" },
+          { en: "prolonged", pos: "adj", ipa: "/prəˈlɒŋd/", vn: "kéo dài" },
+          { en: "renewable", pos: "adj", ipa: "/rɪˈnjuː.ə.bəl/", vn: "tái tạo được" },
+          { en: "signatory", pos: "adj / n", ipa: "/ˈsɪɡ.nə.tər.i/", vn: "bên ký kết" },
+          { en: "habitable", pos: "adj", ipa: "/ˈhæb.ɪ.tə.bəl/", vn: "có thể sinh sống" },
+          { en: "atmosphere", pos: "n", ipa: "/ˈæt.məs.fɪər/", vn: "khí quyển" },
+          { en: "treaties", pos: "n", ipa: "/ˈtriː.tiz/", vn: "các điều ước" },
+          { en: "emissions", pos: "n", ipa: "/iˈmɪʃ.ənz/", vn: "lượng phát thải" }
+        ]
+      },
+      {
+        id: "10-2",
+        title: "2. Preserving Biodiversity and Endangered Species",
+        bilingualSentences: [
+          {
+            en: "Deforestation and urban expansion destroy natural wildlife habitats, pushing thousands of species toward <mark>extinction</mark>.",
+            vn: "Nạn phá rừng và mở rộng đô thị phá hủy môi trường sống tự nhiên của động vật hoang dã, đẩy hàng nghìn loài đến bờ vực tuyệt chủng."
+          },
+          {
+            en: "Poaching and illegal wildlife trade decimate endangered animal populations for profit and traditional <mark>medicine</mark>.",
+            vn: "Săn bắt trộm và buôn bán động vật hoang dã trái phép tàn phá các quần thể động vật nguy cấp vì lợi nhuận và y học cổ truyền."
+          },
+          {
+            en: "Establishing nature reserves and national parks provides protected safe havens for threatened <mark>creatures</mark>.",
+            vn: "Thành lập khu bảo tồn thiên nhiên và vườn quốc gia cung cấp nơi trú ẩn an toàn được bảo vệ cho các sinh vật bị đe dọa."
+          },
+          {
+            en: "Genetic breeding programs in accredited zoos help restore endangered populations before reintroducing them to the <mark>wild</mark>.",
+            vn: "Các chương trình nhân giống di truyền tại sở thú uy tín giúp phục hồi các quần thể nguy cấp trước khi đưa chúng trở lại tự nhiên."
+          },
+          {
+            en: "Community education highlights the ecological importance of every species in maintaining food chain <mark>balance</mark>.",
+            vn: "Giáo dục cộng đồng làm nổi bật tầm quan trọng sinh thái của từng loài trong việc duy trì cân bằng chuỗi thức ăn."
+          },
+          {
+            en: "Protecting natural biodiversity safeguards Earth's delicate biological balance for human <mark>survival</mark>.",
+            vn: "Bảo vệ đa dạng sinh học tự nhiên giúp gìn giữ sự cân bằng sinh học mỏng manh của Trái Đất cho sự sinh tồn con người."
+          }
+        ],
+        vocab: [
+          { en: "extinction", pos: "n", ipa: "/ɪkˈstɪŋk.ʃən/", vn: "sự tuyệt chủng" },
+          { en: "medicine", pos: "n", ipa: "/ˈmed.ɪ.sən/", vn: "y học, thuốc" },
+          { en: "creatures", pos: "n", ipa: "/ˈkriː.tʃəz/", vn: "các sinh vật" },
+          { en: "wild", pos: "n", ipa: "/waɪld/", vn: "môi trường tự nhiên" },
+          { en: "balance", pos: "n", ipa: "/ˈbæl.əns/", vn: "sự cân bằng" },
+          { en: "survival", pos: "n", ipa: "/səˈvaɪ.vəl/", vn: "sự sinh tồn" },
+          { en: "poaching", pos: "n", ipa: "/ˈpəʊ.tʃɪŋ/", vn: "nạn săn bắt trộm" },
+          { en: "decimate", pos: "v", ipa: "/ˈdes.ɪ.meɪt/", vn: "tàn phá, tiêu diệt phần lớn" },
+          { en: "accredited", pos: "adj", ipa: "/əˈkred.ɪ.tɪd/", vn: "được chính thức công nhận" },
+          { en: "reintroducing", pos: "v", ipa: "/ˌriː.ɪn.trəˈdʒuːs.ɪŋ/", vn: "tái thả về tự nhiên" },
+          { en: "havens", pos: "n", ipa: "/ˈheɪ.vənz/", vn: "nơi trú ẩn" },
+          { en: "biodiversity", pos: "n", ipa: "/ˌbaɪ.əʊ.daɪˈvɜː.sə.ti/", vn: "đa dạng sinh học" },
+          { en: "delicate", pos: "adj", ipa: "/ˈdel.ɪ.kət/", vn: "mỏng manh" },
+          { en: "reserves", pos: "n", ipa: "/rɪˈzɜːvz/", vn: "khu bảo tồn" },
+          { en: "threatened", pos: "adj", ipa: "/ˈθret.ənd/", vn: "bị đe dọa" }
+        ]
+      },
+      {
+        id: "10-3",
+        title: "3. Ocean Conservation and Marine Pollution",
+        bilingualSentences: [
+          {
+            en: "Plastic waste dumping in global oceans causes catastrophic harm to marine ecosystems and coastal <mark>communities</mark>.",
+            vn: "Xả rác thải nhựa vào đại dương toàn cầu gây ra tác hại thảm khốc cho hệ sinh thái biển và các cộng đồng duyên hải."
+          },
+          {
+            en: "Sea turtles and fish ingest microplastics, leading to internal injuries and entering human seafood <mark>diets</mark>.",
+            vn: "Rùa biển và cá nuốt phải vi nhựa, dẫn đến chấn thương nội tạng và đi vào chế độ ăn hải sản của con người."
+          },
+          {
+            en: "Industrial chemical runoff creates dead zones in ocean waters where marine life cannot <mark>survive</mark>.",
+            vn: "Nước thải hóa chất công nghiệp tạo ra các vùng nước chết ở đại dương nơi sinh vật biển không thể sinh tồn."
+          },
+          {
+            en: "Establishing protected marine reserves allows overfished fish stocks and coral reefs to <mark>recover</mark>.",
+            vn: "Thành lập khu bảo tồn biển được bảo vệ cho phép các nguồn cá bị đánh bắt quá đà và rạn san hô phục hồi."
+          },
+          {
+            en: "International treaties banning ocean dumping force shipping companies to process waste <mark>responsibly</mark>.",
+            vn: "Hiệp định quốc tế cấm xả thải ra đại dương buộc các công ty vận tải biển xử lý rác thải có trách nhiệm."
+          },
+          {
+            en: "Restoring ocean health preserves Earth's largest climate regulator and life support <mark>system</mark>.",
+            vn: "Phục hồi sức khỏe đại dương bảo vệ bộ điều hòa khí hậu và hệ thống hỗ trợ sự sống lớn nhất của Trái Đất."
+          }
+        ],
+        vocab: [
+          { en: "communities", pos: "n", ipa: "/kəˈmjuː.nə.tiz/", vn: "các cộng đồng" },
+          { en: "diets", pos: "n", ipa: "/ˈdaɪ.əts/", vn: "chế độ ăn uống" },
+          { en: "survive", pos: "v", ipa: "/səˈvaɪv/", vn: "sinh tồn" },
+          { en: "recover", pos: "v", ipa: "/rɪˈkʌv.ər/", vn: "phục hồi" },
+          { en: "responsibly", pos: "adv", ipa: "/rɪˈspɒn.sə.bli/", vn: "một cách có trách nhiệm" },
+          { en: "system", pos: "n", ipa: "/ˈsɪs.təm/", vn: "hệ thống" },
+          { en: "dumping", pos: "n", ipa: "/ˈdʌm.pɪŋ/", vn: "việc xả thải" },
+          { en: "catastrophic", pos: "adj", ipa: "/ˌkæt.əˈstrɒf.ɪk/", vn: "thảm khốc" },
+          { en: "runoff", pos: "n", ipa: "/ˈrʌn.ɒf/", vn: "nước thải chảy trôi" },
+          { en: "overfished", pos: "adj", ipa: "/ˌəʊ.vəˈfɪʃt/", vn: "bị đánh bắt quá đà" },
+          { en: "regulator", pos: "n", ipa: "/ˈreɡ.jə.leɪ.tər/", vn: "bộ điều hòa" },
+          { en: "microplastics", pos: "n", ipa: "/ˈmaɪ.krəʊˌplæs.tɪks/", vn: "vi nhựa" },
+          { en: "ingest", pos: "v", ipa: "/ɪnˈdʒest/", vn: "nuốt vào" },
+          { en: "dead zones", pos: "n.phr", ipa: "/ded zəʊnz/", vn: "vùng nước chết" },
+          { en: "restoring", pos: "v", ipa: "/rɪˈstɔː.rɪŋ/", vn: "phục hồi" }
+        ]
+      }
+    ]
+  }
+];
+
+/*************************************************************
+ * STATE VARIABLES
+ *************************************************************/
+let currentTopicIndex = 0;
+let isTranslationVisible = true; 
+
+let currentFlashcards = [];
+let fcIndex = 0;
+let fcIsFlipped = false;
+let fcMode = "EN-VN"; 
+let knownWordCount = 0; 
+
+let reflectionSentences = [];
+let currentReflectionIndex = 0;
+
+/*************************************************************
+ * INITIALIZATION
+ *************************************************************/
+window.onload = function() {
+  populateTopicDropdown();
+  loadTopicData(0);
+};
+
+function populateTopicDropdown() {
+  const select = document.getElementById("topicSelect");
+  select.innerHTML = "";
+  topicsData.forEach((topic, idx) => {
+    const opt = document.createElement("option");
+    opt.value = idx;
+    opt.textContent = topic.name;
+    select.appendChild(opt);
+  });
+}
+
+function changeTopic(index) {
+  currentTopicIndex = parseInt(index);
+  loadTopicData(currentTopicIndex);
+}
+
+/*************************************************************
+ * LOAD TOPIC DATA & RENDER ARTICLES
+ *************************************************************/
+function loadTopicData(topicIdx) {
+  const topic = topicsData[topicIdx];
+  const container = document.getElementById("articlesContainer");
+  document.getElementById("articleCountBadge").textContent = `${topic.articles.length} Bài Đọc`;
+
+  container.innerHTML = "";
+
+  currentFlashcards = [];
+  reflectionSentences = [];
+
+  topic.articles.forEach((art, idx) => {
+    if(art.vocab) {
+      currentFlashcards.push(...art.vocab);
+    }
+
+    let bilingualHtml = "";
+    art.bilingualSentences.forEach((sent) => {
+      reflectionSentences.push({ en: stripHtml(sent.en), vn: sent.vn });
+      bilingualHtml += `${sent.en} <span class="trans-text">(${sent.vn})</span> `;
+    });
+
+    let vocabListHtml = "";
+    if(art.vocab) {
+      art.vocab.forEach((v, vIdx) => {
+        const vocabId = `vocab-${art.id}-${vIdx}`;
+        vocabListHtml += `
+          <div id="card-${vocabId}" class="p-2 md:p-2.5 bg-amber-50/60 rounded-xl border border-amber-200 hover:bg-amber-100/80 transition flex items-start gap-2 overflow-hidden">
+            <input type="checkbox" id="${vocabId}" onchange="toggleVocabLearned('${vocabId}')" class="mt-1 w-4 h-4 text-emerald-600 rounded border-amber-300 focus:ring-emerald-500 cursor-pointer shrink-0">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-1">
+                <span class="font-bold text-amber-900 text-xs md:text-sm vocab-text truncate">${v.en}</span>
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded border border-emerald-300">${v.pos}</span>
+                  <button onclick="speakText('${v.en.replace(/'/g, "\\'")}')" class="text-amber-600 hover:text-amber-800 text-[11px] p-0.5">
+                    <i class="fa-solid fa-volume-high"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="text-[10px] md:text-[11px] text-gray-500 italic vocab-text break-words">${v.ipa}</div>
+              <div class="text-xs text-emerald-800 font-semibold mt-0.5 vocab-text leading-tight break-words">${v.vn}</div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    const isFirst = idx === 0;
+    const bodyHiddenClass = isFirst ? "" : "hidden";
+    const iconRotateClass = isFirst ? "rotate-180" : "";
+
+    const articleCard = document.createElement("div");
+    articleCard.className = "article-card bg-white rounded-xl md:rounded-2xl border-2 border-green-200 shadow-sm overflow-hidden transition hover:border-green-400 w-full";
+    articleCard.innerHTML = `
+      <div onclick="toggleAccordion('${art.id}')" class="p-3 md:p-5 bg-gradient-to-r from-emerald-50 to-green-50 flex items-center justify-between cursor-pointer select-none border-b border-green-100 gap-2">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center text-xs md:text-sm shadow-sm shrink-0">
+            <i class="fa-solid fa-book"></i>
+          </span>
+          <h3 class="font-bold text-sm md:text-lg text-green-900 font-farm truncate">${art.title}</h3>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <span class="text-[10px] md:text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full font-bold hidden sm:inline-block">
+            ${art.vocab ? art.vocab.length : 0} từ nâng cao
+          </span>
+          <i id="icon-${art.id}" class="accordion-icon fa-solid fa-chevron-down text-green-600 text-xs md:text-base duration-300 transform ${iconRotateClass}"></i>
+        </div>
+      </div>
+
+      <div id="body-${art.id}" class="accordion-body p-3.5 md:p-6 space-y-4 md:space-y-6 ${bodyHiddenClass}">
+        
+        <div class="bg-emerald-50/40 border border-emerald-200 rounded-xl md:rounded-2xl p-3.5 md:p-6 space-y-2 md:space-y-3 shadow-inner">
+          <div class="flex items-center justify-between border-b border-emerald-200 pb-2 mb-2 gap-2">
+            <span class="text-[10px] md:text-xs font-bold text-emerald-700 uppercase tracking-wider flex items-center gap-1 shrink-0">
+              <i class="fa-solid fa-language"></i> Nội Dung Song Ngữ
+            </span>
+            <button onclick="speakText('${stripHtml(art.bilingualSentences.map(s => s.en).join(' ')).replace(/'/g, "\\'")}')" class="text-[10px] md:text-xs text-emerald-700 hover:text-emerald-900 font-bold flex items-center gap-1 bg-white px-2 py-0.5 md:px-2.5 md:py-1 rounded-lg border border-emerald-300 shadow-sm shrink-0">
+              <i class="fa-solid fa-volume-high"></i> Nghe toàn bài
+            </button>
+          </div>
+          <div class="text-sm md:text-lg leading-relaxed text-gray-800 passage-text break-words">
+            ${bilingualHtml}
+          </div>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-xs md:text-sm font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-highlighter text-amber-500"></i> Từ Vựng Nâng Cao Đã Highlight
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
+            ${vocabListHtml}
+          </div>
+        </div>
+
+      </div>
+    `;
+
+    container.appendChild(articleCard);
+  });
+
+  applyTranslationVisibility();
+
+  resetFlashcards();
+  resetSpeakingReflection();
+}
+
+/*************************************************************
+ * ACCORDION TOGGLE
+ *************************************************************/
+function toggleAccordion(targetId) {
+  const targetBody = document.getElementById(`body-${targetId}`);
+  const targetIcon = document.getElementById(`icon-${targetId}`);
+  const isCurrentlyHidden = targetBody.classList.contains("hidden");
+
+  document.querySelectorAll('.accordion-body').forEach(body => {
+    body.classList.add('hidden');
+  });
+  document.querySelectorAll('.accordion-icon').forEach(icon => {
+    icon.classList.remove('rotate-180');
+  });
+
+  if (isCurrentlyHidden) {
+    targetBody.classList.remove("hidden");
+    targetIcon.classList.add("rotate-180");
+
+    setTimeout(() => {
+      const cardElement = targetBody.closest('.article-card');
+      if (cardElement) {
+        cardElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  }
+}
+
+/*************************************************************
+ * TOGGLE VOCAB LEARNED
+ *************************************************************/
+function toggleVocabLearned(vocabId) {
+  const checkbox = document.getElementById(vocabId);
+  const card = document.getElementById(`card-${vocabId}`);
+  if (checkbox.checked) {
+    card.classList.add('vocab-learned');
+  } else {
+    card.classList.remove('vocab-learned');
+  }
+}
+
+/*************************************************************
+ * TOGGLE TRANSLATION MODE
+ *************************************************************/
+function toggleTranslation() {
+  isTranslationVisible = !isTranslationVisible;
+  applyTranslationVisibility();
+}
+
+function applyTranslationVisibility() {
+  const main = document.querySelector("main");
+  const btnText = document.getElementById("toggleTransText");
+  const btn = document.getElementById("toggleTransBtn");
+
+  if (isTranslationVisible) {
+    main.classList.remove("hide-translation");
+    btnText.textContent = "Ẩn Bản Dịch";
+    btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> <span>Ẩn Bản Dịch</span>`;
+    btn.className = "w-full sm:w-auto px-3.5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-xs md:text-sm shrink-0";
+  } else {
+    main.classList.add("hide-translation");
+    btnText.textContent = "Hiện Bản Dịch";
+    btn.innerHTML = `<i class="fa-solid fa-eye"></i> <span>Hiện Bản Dịch</span>`;
+    btn.className = "w-full sm:w-auto px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-xs md:text-sm shrink-0";
+  }
+}
+
+/*************************************************************
+ * FLASHCARD SYSTEM
+ *************************************************************/
+function resetFlashcards() {
+  fcIndex = 0;
+  knownWordCount = 0;
+  fcIsFlipped = false;
+  
+  document.getElementById("flashcard").classList.remove("hidden");
+  document.getElementById("fcControls").classList.remove("hidden");
+  document.getElementById("fcCongratsBox").classList.add("hidden");
+
+  renderFlashcard();
+}
+
+function setFlashcardMode(mode) {
+  fcMode = mode;
+  document.getElementById("modeEnVnBtn").className = mode === 'EN-VN' 
+    ? "px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition bg-amber-500 text-white shadow-sm"
+    : "px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition text-gray-600 hover:bg-amber-100";
+  document.getElementById("modeVnEnBtn").className = mode === 'VN-EN' 
+    ? "px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition bg-amber-500 text-white shadow-sm"
+    : "px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition text-gray-600 hover:bg-amber-100";
+
+  resetFlashcards();
+}
+
+function flipFlashcard() {
+  const fcInner = document.getElementById("flashcardInner");
+  fcIsFlipped = !fcIsFlipped;
+  if(fcIsFlipped) {
+    fcInner.classList.add("rotate-y-180");
+  } else {
+    fcInner.classList.remove("rotate-y-180");
+  }
+}
+
+function renderFlashcard() {
+  const fcInner = document.getElementById("flashcardInner");
+  fcInner.classList.remove("rotate-y-180");
+  fcIsFlipped = false;
+
+  if (currentFlashcards.length === 0) {
+    document.getElementById("fcFrontText").textContent = "Không có từ vựng";
+    document.getElementById("fcBackText").textContent = "...";
+    document.getElementById("fcProgress").textContent = "Tiến độ: 0 / 0";
+    return;
+  }
+
+  const card = currentFlashcards[fcIndex];
+  document.getElementById("fcProgress").textContent = `Tiến độ: ${fcIndex + 1} / ${currentFlashcards.length} từ (Đã biết: ${knownWordCount})`;
+  document.getElementById("fcAudioText").value = card.en;
+
+  if (fcMode === 'EN-VN') {
+    document.getElementById("fcFrontLabel").textContent = "Từ Tiếng Anh";
+    document.getElementById("fcFrontText").innerHTML = `
+      <div class="leading-tight">${card.en} <span class="text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-normal">(${card.pos})</span></div>
+      <div class="text-[11px] md:text-xs text-amber-600 font-normal mt-1">${card.ipa}</div>
+    `;
+    document.getElementById("fcBackLabel").textContent = "Nghĩa Tiếng Việt";
+    document.getElementById("fcBackText").textContent = card.vn;
+  } else {
+    document.getElementById("fcFrontLabel").textContent = "Nghĩa Tiếng Việt";
+    document.getElementById("fcFrontText").textContent = card.vn;
+    document.getElementById("fcBackLabel").textContent = "Từ Tiếng Anh & IPA";
+    document.getElementById("fcBackText").innerHTML = `
+      <div class="leading-tight">${card.en} <span class="text-xs bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded font-normal">(${card.pos})</span></div>
+      <div class="text-[11px] md:text-xs text-amber-100 font-normal mt-1">${card.ipa}</div>
+    `;
+  }
+}
+
+function nextFlashcard() {
+  if (currentFlashcards.length === 0) return;
+  
+  if (fcIndex + 1 >= currentFlashcards.length) {
+    if (knownWordCount >= currentFlashcards.length) {
+      showCongratulation();
+      return;
+    } else {
+      fcIndex = 0; 
+    }
+  } else {
+    fcIndex++;
+  }
+  renderFlashcard();
+}
+
+function knowWord() {
+  knownWordCount++;
+  if (knownWordCount >= currentFlashcards.length) {
+    showCongratulation();
+  } else {
+    nextFlashcard();
+  }
+}
+
+function dontKnowWord() {
+  nextFlashcard();
+}
+
+function showCongratulation() {
+  document.getElementById("flashcard").classList.add("hidden");
+  document.getElementById("fcControls").classList.add("hidden");
+  document.getElementById("fcCongratsBox").classList.remove("hidden");
+  document.getElementById("fcProgress").textContent = `Tiến độ: ${currentFlashcards.length} / ${currentFlashcards.length} từ (Đã thuộc 100%)`;
+}
+
+/*************************************************************
+ * TRANSLATION REFLECTION PRACTICE
+ *************************************************************/
+function resetSpeakingReflection() {
+  currentReflectionIndex = 0;
+  document.getElementById("engAnswerContainer").classList.add("hidden");
+  if(reflectionSentences.length > 0) {
+    document.getElementById("vietSentence").textContent = reflectionSentences[0].vn;
+    document.getElementById("engAnswer").textContent = reflectionSentences[0].en;
+  } else {
+    document.getElementById("vietSentence").textContent = "Chưa có dữ liệu bài đọc.";
+    document.getElementById("engAnswer").textContent = "";
+  }
+}
+
+function showSpeakingAnswer() {
+  document.getElementById("engAnswerContainer").classList.remove("hidden");
+}
+
+function nextSpeakingSentence() {
+  if (reflectionSentences.length === 0) return;
+  document.getElementById("engAnswerContainer").classList.add("hidden");
+  
+  currentReflectionIndex = Math.floor(Math.random() * reflectionSentences.length);
+  const item = reflectionSentences[currentReflectionIndex];
+  
+  document.getElementById("vietSentence").textContent = item.vn;
+  document.getElementById("engAnswer").textContent = item.en;
+}
+
+/*************************************************************
+ * HELPER FUNCTIONS
+ *************************************************************/
+function stripHtml(html) {
+  let tmp = document.createElement("DIV");
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || "";
+}
+
+function speakText(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    window.speechSynthesis.speak(utterance);
+  } else {
+    alert("Trình duyệt của bạn không hỗ trợ phát âm thanh.");
+  }
+}
+</script>
 
 </body>
 </html>
